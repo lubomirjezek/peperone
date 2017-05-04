@@ -1,0 +1,15 @@
+<ul class="nav-list">
+  <li class="nav-list__item" *ngFor="let link of linksPrimary">
+    <a class="nav-list__link" [routerLink]="link.url" routerLinkActive="nav-list__link--active" (click)="close()">
+      {{ link.name }}
+    </a>
+  </li>
+</ul>
+
+<ul class="nav-list nav-list--inline">
+  <li class="nav-list__item" *ngFor="let link of linksSecondary">
+    <a class="nav-list__link" target="_blank" [routerLink]="link.url">
+      {{ link.name }}
+    </a>
+  </li>
+</ul>

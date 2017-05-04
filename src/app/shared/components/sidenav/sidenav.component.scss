@@ -1,0 +1,58 @@
+@import "../../../../scss/variables";
+@import "../../../../scss/functions";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: map-get($theme, navigation-color);
+  padding: rem(20) 0;
+}
+
+.nav-list {
+  list-style: none;
+  text-align: center;
+  flex: 9;
+}
+
+.nav-list__item {
+  margin: rem(12) 0;
+}
+
+.nav-list__link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: map-get($theme, secondary-text);
+  transition: color 200ms;
+  padding: rem(5) 0;
+  font-size: rem(22);
+  font-weight: 400;
+
+  &:hover, &.nav-list__link--active {
+    color: map-get($theme, primary-text);
+  }
+}
+
+.nav-list--inline {
+  display: flex;
+  flex: 1;
+
+  .nav-list__item {
+    &:first-child:after {
+      content: '/';
+      color: map-get($theme, secondary-text);
+      line-height: rem(20);
+      vertical-align: middle;
+      font-size: rem(14);
+      padding-right: rem(10);
+    }
+  }
+
+  .nav-list__link {
+    font-size: rem(14);
+    line-height: rem(20);
+    letter-spacing: rem(2);
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+html {
+  font-size: #{$base-font-size}px;
+}
+
+body {
+  font-size: rem(16);
+  line-height: 1.5;
+  font-family: $base-font-family;
+  font-weight: 300;
+  background-color: map-get($theme, page-color);
+  color: map-get($theme, primary-text);
+}
+
+.container {
+  margin: 0 rem(10);
+
+  @media (min-width: $page-width) {
+    margin: 0 rem(20);
+  }
+}
+
+h1,
+h2 {
+  font-weight: 500;
+}

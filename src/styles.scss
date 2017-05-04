@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+@import "scss/variables";
+@import "scss/functions";
+@import "scss/reset";
+
+@font-face {
+  font-family: 'Karben';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Karben'), url('assets/fonts/KarbenBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Karben';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Karben'), url('assets/fonts/KarbenBoldItalic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Karben';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Karben'), url('assets/fonts/KarbenLight.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Karben';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Karben'), url('assets/fonts/KarbenLightItalic.otf') format('opentype');
+}

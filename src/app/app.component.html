@@ -1,5 +1,7 @@
-<main class="page__main">
-  <router-outlet></router-outlet>
+<app-header [@open]="openNavigation"></app-header>
+<app-content [@open]="openNavigation">
+  <br><br><br><br>
   <button (click)="toggle()">toggle</button>
-</main>
-<app-sidenav class="sidenav"></app-sidenav>
+  <router-outlet></router-outlet>
+</app-content>
+<app-sidenav [@open]="openNavigation"></app-sidenav>

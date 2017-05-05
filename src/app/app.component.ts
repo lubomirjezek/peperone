@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
@@ -14,7 +14,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   ]
 })
 export class AppComponent {
-  @HostBinding('@open') openNavigation = true;
+  openNavigation = false;
 
   toggle() {
     this.openNavigation = !this.openNavigation;

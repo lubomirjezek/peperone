@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Input() state: boolean;
+
+  @Output() changeState: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  closeNav() {
+    this.changeState.emit(false);
   }
 
+  toggleNav() {
+    this.changeState.emit(!this.state);
+  }
 }

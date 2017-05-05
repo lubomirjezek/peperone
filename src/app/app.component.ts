@@ -14,9 +14,9 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   ]
 })
 export class AppComponent {
-  openNavigation = false;
+  state = false;
 
-  toggle() {
-    this.openNavigation = !this.openNavigation;
+  handleStateChange(state: boolean) {
+    this.state = state;
   }
 }

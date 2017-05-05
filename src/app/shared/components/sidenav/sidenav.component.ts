@@ -45,8 +45,9 @@ const LINKS_SECONDARY: Link[] = [
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
-  @Output() nav: EventEmitter<boolean>;
-  linksPrimary: Link[] = LINKS_PRIMARY;
+  @Output() changeState: EventEmitter<boolean> = new EventEmitter();
+
+  linksPrimary:   Link[] = LINKS_PRIMARY;
   linksSecondary: Link[] = LINKS_SECONDARY;
 
   constructor() { }
@@ -54,6 +55,6 @@ export class SidenavComponent implements OnInit {
   ngOnInit() { }
 
   close() {
-    this.nav.emit(false);
+    this.changeState.emit(false);
   }
 }

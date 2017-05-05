@@ -1,0 +1,70 @@
+@import "../../../../../scss/variables";
+@import "../../../../../scss/functions";
+
+:host {
+  display: inline-flex;
+  height: rem(35);
+  float: right;
+  align-items: center;
+  width: rem(45);
+  margin: 0 rem(25) 0 0;
+  position: fixed;
+  cursor: pointer;
+  transition: all 200ms;
+  right: 0;
+
+  &:hover {
+    width: rem(49);
+    transform: translateX(2px);
+  }
+}
+
+.burger__line {
+  display: block;
+  position: absolute;
+  height: rem(4);
+  width: 100%;
+  opacity: 1;
+  left: 0;
+  background-color: map-get($theme, primary-color);
+  transition: .25s ease;
+}
+
+.burger__line--1 {
+  top: rem(5);
+
+  :host(.open) & {
+    top: rem(18);
+    width: 0;
+    left: 50%;
+  }
+}
+
+.burger__line--2,
+.burger__line--3 {
+  top: rem(15);
+  background-color: map-get($theme, secondary-color);
+
+}
+
+.burger__line--2 {
+  :host(.open) & {
+    transform: rotate(45deg);
+  }
+}
+
+.burger__line--3 {
+  :host(.open) & {
+    transform: rotate(-45deg);
+  }
+}
+
+.burger__line--4 {
+  top: rem(25);
+
+  :host(.open) & {
+    top: rem(18);
+    width: 0;
+    left: 50%;
+  }
+}

@@ -1,7 +1,13 @@
-<app-header [@open]="openNavigation"></app-header>
-<app-content [@open]="openNavigation">
-  <br><br><br><br>
-  <button (click)="toggle()">toggle</button>
+<app-header
+  (changeState)="handleStateChange($event)"
+  [@open]="state"
+  [state]="state"></app-header>
+
+<app-content
+  [@open]="state">
   <router-outlet></router-outlet>
 </app-content>
-<app-sidenav [@open]="openNavigation"></app-sidenav>
+
+<app-sidenav
+  (changeState)="handleStateChange($event)"
+  [@open]="state"></app-sidenav>

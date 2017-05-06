@@ -1,6 +1,7 @@
 @import "scss/variables";
 @import "scss/functions";
 @import "scss/reset";
+@import "~@mcrai/ui/src/scss/theme";
 
 @font-face {
   font-family: 'Karben';
@@ -29,3 +30,5 @@
   font-weight: 400;
   src: local('Karben'), url('assets/fonts/KarbenLightItalic.otf') format('opentype');
 }
+
+@include create-theme($theme);

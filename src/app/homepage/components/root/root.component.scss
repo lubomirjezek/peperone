@@ -1,0 +1,47 @@
+@import "../../../../scss/variables";
+@import "../../../../scss/functions";
+
+.tile { }
+
+.tile--empty {
+  display: none;
+
+  @media (min-width: $breakpoint_m) {
+    display: block;
+  }
+}
+
+.tile--logo {
+  background-color: map-get($theme, card-color);
+
+  .tile__image {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 20px;
+  }
+}
+
+.tile__image {
+  object-fit: cover;
+}
+
+.tile--card {
+  padding: rem(40);
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tile__headline {
+  font-size: rem(24);
+  text-align: center;
+  color: map-get($theme, secondary-text);
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: rem(2);
+  margin: 0;
+}
+
+.tile__icon {
+  font-size: rem(40);
+}

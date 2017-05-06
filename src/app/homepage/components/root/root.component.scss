@@ -27,7 +27,7 @@
 }
 
 .tile--card {
-  padding: rem(40);
+  padding: rem(30);
   flex-direction: column;
   justify-content: space-between;
 }
@@ -40,6 +40,10 @@
   font-weight: 400;
   letter-spacing: rem(2);
   margin: 0;
+}
+
+.tile__text {
+  text-align: center;
 }
 
 .tile__icon {

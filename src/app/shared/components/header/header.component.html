@@ -1,4 +1,4 @@
-<a class="logo" routerLink="/" (click)="closeNav()">
+<a class="logo" routerLink="/" (click)="closeNav()" *ngIf="showBackground">
   <img class="logo__img" src="assets/img/logo-header.png" alt="Peperone">
 </a>
 <app-burger (click)="toggleNav()" [class.open]="state"></app-burger>

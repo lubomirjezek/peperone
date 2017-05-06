@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,13 +7,24 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  private static HOMEPAGE_ROUTE = '/';
+
   @Input() state: boolean;
-
   @Output() changeState: EventEmitter<boolean> = new EventEmitter();
+  @HostBinding('class.background') showBackground: boolean;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.router.events.subscribe(this.handleRouteChange.bind(this));
+  }
+
+  private handleRouteChange(event) {
+    this.showBackground = event.url !== HeaderComponent.HOMEPAGE_ROUTE;
+    window.scrollTo(0, 0);
+  }
 
   closeNav() {
     this.changeState.emit(false);

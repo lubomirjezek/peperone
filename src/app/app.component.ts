@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
@@ -13,8 +13,12 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     ])
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   state = false;
+
+  constructor () { }
+
+  ngOnInit() { }
 
   handleStateChange(state: boolean) {
     this.state = state;

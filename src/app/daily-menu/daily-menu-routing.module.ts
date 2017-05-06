@@ -1,23 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RootComponent } from './components/root/root.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: './homepage/homepage.module#HomepageModule'
-  }, {
-    path: 'denni-menu',
-    loadChildren: './daily-menu/daily-menu.module#DailyMenuModule'
+    component: RootComponent
   }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forChild(routes)
   ],
   exports: [
     RouterModule
   ],
   providers: []
 })
-export class AppRoutingModule { }
+export class DailyMenuRoutingModule { }

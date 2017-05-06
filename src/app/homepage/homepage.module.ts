@@ -6,6 +6,7 @@ import { UIModule } from '@mcrai/ui';
 import { RootComponent } from './components/root/root.component';
 import { TilesComponent } from './components/root/tiles/tiles.component';
 import { TileComponent } from './components/root/tile/tile.component';
+import { MapComponent } from './components/root/map/map.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { TileComponent } from './components/root/tile/tile.component';
   declarations: [
     RootComponent,
     TilesComponent,
-    TileComponent
+    TileComponent,
+    MapComponent
   ]
 })
 export class HomepageModule { }

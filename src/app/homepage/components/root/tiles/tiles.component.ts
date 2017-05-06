@@ -6,16 +6,27 @@ import { Component, HostBinding, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./tiles.component.scss']
 })
 export class TilesComponent implements OnInit {
-  @HostBinding('style.height') height = window.innerHeight + 'px';
-  @HostBinding('style.width')  width  = window.innerWidth + 'px';
+  @HostBinding('style.height') height: string;
+  @HostBinding('style.width')  width: string;
 
   @HostListener('window:resize', ['$event']) handleResize(event) {
-    this.width  = event.target.innerWidth  + 'px';
-    this.height = event.target.innerHeight + 'px';
+    this.setSize(event.target.innerWidth, event.target.innerHeight);
   }
 
-  constructor() { }
+  constructor() {
+    this.setSize(window.innerWidth, window.innerHeight);
+  }
 
   ngOnInit() { }
+
+  setSize(wWidth: number, wHeight: number) {
+    if (wHeight > 700 && wWidth >= 1280) {
+      const height = wHeight - 80;
+      const width  = 5 / 3 * height;
+
+      this.width  = width + 'px';
+      this.height = height + 'px';
+    }
+  }
 
 }

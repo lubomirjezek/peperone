@@ -21,11 +21,10 @@ export class TilesComponent implements OnInit {
 
   setSize(wWidth: number, wHeight: number) {
     if (wHeight > 700 && wWidth >= 1280) {
-      const height = wHeight - 80;
-      const width  = 5 / 3 * height;
+      const width  = 5 / 3 * wHeight;
 
       this.width  = width + 'px';
-      this.height = height + 'px';
+      this.height = wHeight + 'px';
     }
   }
 

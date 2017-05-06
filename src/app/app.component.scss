@@ -1,0 +1,6 @@
+@import "../scss/variables";
+@import "../scss/functions";
+
+:host {
+  background: map-get($theme, page-color) url('../assets/img/bg.jpg') no-repeat top center;
+}

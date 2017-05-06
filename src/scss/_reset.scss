@@ -27,7 +27,8 @@ body {
   margin: 0 rem(10);
 
   @media (min-width: $page-width) {
-    margin: 0 rem(20);
+    margin: 0 auto;
+    max-width: $page-width;
   }
 }
 

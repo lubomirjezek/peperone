@@ -1,0 +1,31 @@
+@import "../../../../scss/variables";
+@import "../../../../scss/functions";
+
+:host {
+  display: block;
+  height: rem(150);
+  position: relative;
+
+  @media (min-width: $breakpoint_m) {
+    height: rem(290);
+  }
+}
+
+.headline__container {
+  height: 100%;
+}
+
+.headline__name {
+  font-size: rem(48);
+  color: map-get($theme, secondary-text);
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: rem(2);
+  position: absolute;
+  bottom: rem(20);
+  margin-left: rem(20);
+
+  @media (min-width: $breakpoint_m) {
+    bottom: rem(30);
+  }
+}

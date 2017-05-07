@@ -9,7 +9,7 @@
 .subtitle {
   color: map-get($theme, primary-color);;
   text-transform: uppercase;
-  border-bottom: 1px solid map-get($theme, secondary-color);;
+  border-bottom: 1px solid map-get($theme, secondary-color);
   padding-bottom: rem(10);
   font-size: rem(20);
   font-weight: 600;

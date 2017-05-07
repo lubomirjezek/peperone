@@ -1,0 +1,7 @@
+@import "../../../../scss/variables";
+@import "../../../../scss/functions";
+
+:host {
+  display: block;
+  padding: rem(90) rem(40) rem(20) rem(40);
+}

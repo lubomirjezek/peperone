@@ -1,0 +1,22 @@
+<ng-container *ngIf="galleries; then list else loading"></ng-container>
+
+<ng-template #list>
+  <ul class="list">
+    <li class="list__item list__info">
+      <h2 class="list__title">{{ galleries[index].name }}</h2>
+      <button class="control control--prev" (click)="decrement()" mcrai-icon-button>
+        <mcrai-icon color="secondary">person</mcrai-icon>
+      </button>
+      <button class="control control--next" (click)="increment()" mcrai-icon-button>
+        <mcrai-icon color="secondary">person</mcrai-icon>
+      </button>
+    </li>
+    <li class="list__item" [@fadeIn] *ngFor="let image of galleries[index].image; let i = index">
+      <img class="list__image" [src]="image.displaySrc" alt="Obrázek {{ i }}">
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { MenuItem } from '../../../models/menu-item';
+import { Menu } from '../../../models/menu';
 
 @Component({
   selector: 'app-daily-menu-list',
@@ -8,7 +8,7 @@ import { MenuItem } from '../../../models/menu-item';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DailyMenuListComponent implements OnInit {
-  @Input() data: MenuItem[] = [];
+  @Input() list: Menu[] = [];
 
   constructor() { }
 

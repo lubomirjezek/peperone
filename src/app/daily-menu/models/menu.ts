@@ -1,7 +1,7 @@
 import { Soup } from './soup';
 import { Meal } from './meal';
 
-export interface MenuItem {
+export interface Menu {
   polifky: Soup[];
   hlavni: Meal[];
   active: boolean;

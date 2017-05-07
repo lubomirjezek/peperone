@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DailyMenuService } from '../../service/daily-menu.service';
+import { Observable } from 'rxjs/Observable';
+import { MenuItem } from '../../models/menu-item';
 
 @Component({
   selector: 'app-daily-menu',
@@ -7,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RootComponent implements OnInit {
   headline = 'Denní menu';
-  bg       = 'url(../../../assets/img/bg-daily-menu.jpg)';
+  bg = 'url(../../../assets/img/bg-daily-menu.jpg)';
+  menu: Observable<MenuItem[]>;
 
-  constructor() { }
+  constructor(
+    private dailyMenuService: DailyMenuService
+  ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.menu = this.dailyMenuService.getItems();
+  }
 
 }

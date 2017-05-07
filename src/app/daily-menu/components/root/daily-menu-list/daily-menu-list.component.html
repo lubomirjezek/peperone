@@ -1,0 +1,28 @@
+<ng-container *ngIf="data && data.length > 0; then list else empty"></ng-container>
+
+<ng-template #list>
+  <ul class="daily-menu">
+    <li class="daily-menu__item" *ngFor="let item of data" [class.daily-menu__item-active]="item.active">
+      <h2 class="daily-menu__day">{{ item.day }} ({{ item.date }})</h2>
+      <ul class="day">
+        <li class="day__item" *ngFor="let soup of item.polifky">
+          <span class="day__name"><strong>{{ soup.name }}</strong> ({{ soup.alergens }})</span>
+          <span class="day__info">polévka ({{ soup.size }})</span>
+          <span class="day__price"></span>
+        </li>
+        <li class="day__item" *ngFor="let meal of item.hlavni">
+          <span class="day__name"><strong>{{ meal.name }}</strong> ({{ meal.alergens }})</span>
+          <span class="day__info">{{ meal.size }}</span>
+          <span class="day__price"><strong>{{ meal.price }},-</strong></span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p>Seznam alergenů k nahlédnutí u obsluhy, změna vyhrazena. Menu v nabídce do vyprodání.</p>
+  <br><br><br>
+</ng-template>
+
+<ng-template #empty>
+  <br><br>
+  <p>Denní menu je právě teď prázdné.</p>
+</ng-template>

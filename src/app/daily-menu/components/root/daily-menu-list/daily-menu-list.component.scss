@@ -1,0 +1,73 @@
+@import "../../../../../scss/variables";
+@import "../../../../../scss/functions";
+
+.daily-menu {
+  list-style: none;
+  padding: rem(65) 0 rem(30) 0;
+}
+
+.daily-menu__day {
+  color: map-get($theme, primary-color);
+  text-transform: uppercase;
+  border-bottom: 1px solid map-get($theme, secondary-color);
+  padding-bottom: rem(10);
+  font-size: rem(20);
+  font-weight: 600;
+  margin: 0;
+}
+
+.daily-menu__item {
+  margin: rem(10) rem(20);
+}
+
+.daily-menu__item-active {
+  background-color: #dadada;
+  margin-left: 0;
+  margin-right: 0;
+  padding: rem(20);
+}
+
+.day {
+  margin: rem(15) 0;
+}
+
+.day__item {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: rem(20);
+
+  @media (min-width: $breakpoint_s) {
+    margin-bottom: 0;
+  }
+}
+
+.day__name {
+  flex: 5 100%;
+  text-align: left;
+
+  @media (min-width: $breakpoint_s) {
+    flex: 7 70%;
+    order: 2;
+  }
+}
+
+.day__info {
+  flex: 4 80%;
+  text-align: right;
+
+  @media (min-width: $breakpoint_s) {
+    flex: 2 20%;
+    order: 1;
+    text-align: left;
+  }
+}
+
+.day__price {
+  flex: 1 20%;
+  text-align: right;
+
+  @media (min-width: $breakpoint_s) {
+    flex: 1 10%;
+    order: 3;
+  }
+}

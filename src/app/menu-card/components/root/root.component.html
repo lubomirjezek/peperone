@@ -1,3 +1,109 @@
-<p>
-  root works!
-</p>
+<app-headline
+  [name]="headline"
+  [bg]="bg"></app-headline>
+
+<div class="container">
+  <h2 class="subtitle">Pizza</h2>
+  <app-menu-card-list
+    [items]="pizzas | async"
+    [columns]="4"></app-menu-card-list>
+  <h2 class="subtitle">Ingredience na pizzu</h2>
+  <app-menu-card-list
+    [items]="toppings | async"
+    [columns]="2"></app-menu-card-list>
+  <h2 class="subtitle">Polévky</h2>
+  <app-menu-card-list
+    [items]="soups | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Předkrmy</h2>
+  <app-menu-card-list
+    [items]="starters | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Pasta</h2>
+  <app-menu-card-list
+    [items]="pasta | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Risotto</h2>
+  <app-menu-card-list
+    [items]="risotto | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Gnocchi</h2>
+  <app-menu-card-list
+    [items]="gnocchi | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Co nesmí chybět</h2>
+  <app-menu-card-list
+    [items]="others | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Speciality</h2>
+  <app-menu-card-list
+    [items]="specialities | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Burgery</h2>
+  <app-menu-card-list
+    [items]="burgers | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Saláty</h2>
+  <app-menu-card-list
+    [items]="salads | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Přílohy</h2>
+  <app-menu-card-list
+    [items]="sides | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Moučníky</h2>
+  <app-menu-card-list
+    [items]="desserts | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Dětská jídla</h2>
+  <app-menu-card-list
+    [items]="kidsFood | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Káva</h2>
+  <app-menu-card-list
+    [items]="coffee | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Čaj</h2>
+  <app-menu-card-list
+    [items]="tea | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Čokoláda</h2>
+  <app-menu-card-list
+    [items]="chocolate | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Pivo</h2>
+  <app-menu-card-list
+    [items]="beer | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Víno</h2>
+  <app-menu-card-list
+    [items]="wine | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Nealkoholické nápoje</h2>
+  <app-menu-card-list
+    [items]="nonAlcoholic | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Aperitivy</h2>
+  <app-menu-card-list
+    [items]="aperitives | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Destiláty</h2>
+  <app-menu-card-list
+    [items]="destilates | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Whiskey a Bourbony</h2>
+  <app-menu-card-list
+    [items]="whiskey | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Rumy</h2>
+  <app-menu-card-list
+    [items]="rums | async"
+    [columns]="3"></app-menu-card-list>
+  <h2 class="subtitle">Likéry, Cognac</h2>
+  <app-menu-card-list
+    [items]="likers | async"
+    [columns]="3"></app-menu-card-list>
+  <br><br><br>
+  <a href="assets/files/0133_Peperone_jidelni-listek_A3.pdf">anglický jídelní lístek zde (pdf)</a>
+  <br><br>
+</div>

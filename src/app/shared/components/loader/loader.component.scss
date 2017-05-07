@@ -1,0 +1,8 @@
+@import "../../../../scss/variables";
+@import "../../../../scss/functions";
+
+:host {
+  display: block;
+  height: rem(250);
+  background: transparent url('../../../../assets/img/rolling.svg') no-repeat center center;
+}

@@ -7,6 +7,7 @@ import { ContentComponent } from './components/content/content.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { RouterModule } from '@angular/router';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     ContentComponent,
     BurgerComponent,
+    LoaderComponent
   ],
   declarations: [
     HeadlineComponent,
@@ -26,6 +28,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     ContentComponent,
     BurgerComponent,
+    LoaderComponent,
   ]
 })
 export class SharedModule { }

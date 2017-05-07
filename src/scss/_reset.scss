@@ -32,7 +32,14 @@ body {
   }
 }
 
-h1,
-h2 {
-  font-weight: 500;
+a,
+a:link,
+a:visited {
+  font-weight: 600;
+  text-decoration: none;
+  color: map-get($theme, primary-color);;
+
+  &:hover {
+    color: map-get($theme, secondary-color);;
+  }
 }

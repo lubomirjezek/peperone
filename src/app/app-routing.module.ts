@@ -11,6 +11,9 @@ const routes: Routes = [
   }, {
     path: 'menu-karta',
     loadChildren: './menu-card/menu-card.module#MenuCardModule'
+  }, {
+    path: 'galerie',
+    loadChildren: './gallery/gallery.module#GalleryModule'
   }
 ];
 

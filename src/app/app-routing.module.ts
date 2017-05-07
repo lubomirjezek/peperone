@@ -8,6 +8,9 @@ const routes: Routes = [
   }, {
     path: 'denni-menu',
     loadChildren: './daily-menu/daily-menu.module#DailyMenuModule'
+  }, {
+    path: 'menu-karta',
+    loadChildren: './menu-card/menu-card.module#MenuCardModule'
   }
 ];
 

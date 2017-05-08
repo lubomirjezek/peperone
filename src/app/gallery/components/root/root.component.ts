@@ -56,18 +56,18 @@ export class RootComponent implements OnInit {
   }
 
   prevImage() {
-    if (this.imageIndex < this.galleries[this.galleryIndex].image.length - 1) {
-      this.imageIndex++;
+    if (this.imageIndex > 0) {
+      this.imageIndex--;
     } else {
-      this.imageIndex = 0;
+      this.imageIndex = this.galleries[this.galleryIndex].image.length - 1;
     }
   }
 
   nextImage() {
-    if (this.imageIndex > 0) {
+    if (this.imageIndex < this.galleries[this.galleryIndex].image.length - 1) {
       this.imageIndex++;
     } else {
-      this.imageIndex = this.galleries[this.galleryIndex].image.length - 1;
+      this.imageIndex = 0;
     }
   }
 

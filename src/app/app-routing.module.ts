@@ -14,6 +14,9 @@ const routes: Routes = [
   }, {
     path: 'galerie',
     loadChildren: './gallery/gallery.module#GalleryModule'
+  }, {
+    path: 'kontakt',
+    loadChildren: './contact/contact.module#ContactModule'
   }
 ];
 

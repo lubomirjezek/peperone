@@ -1,0 +1,18 @@
+<ng-container *ngIf="image; then detail else loading"></ng-container>
+
+<ng-template #detail>
+  <button class="control control--close" (click)="close()" mcrai-icon-button>
+    <mcrai-icon color="secondary">person</mcrai-icon>
+  </button>
+  <img class="detail__image" [src]="src" alt="">
+  <button class="control control--prev" (click)="prev()" mcrai-icon-button>
+    <mcrai-icon color="secondary">person</mcrai-icon>
+  </button>
+  <button class="control control--next" (click)="next()" mcrai-icon-button>
+    <mcrai-icon color="secondary">person</mcrai-icon>
+  </button>
+</ng-template>
+
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>

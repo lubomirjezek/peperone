@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Gallery } from '../../../models/gallery';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-gallery-list',
@@ -17,41 +16,29 @@ import { ActivatedRoute, Router } from '@angular/router';
   ]
 })
 export class GalleryListComponent implements OnInit {
-  _galleries: Gallery[];
-  _index = 0;
+  private _gallery: Gallery;
 
-  @Input() set galleries(value: Gallery[]) {
+  @Output() nextEvent: EventEmitter<boolean> = new EventEmitter();
+  @Output() prevEvent: EventEmitter<boolean> = new EventEmitter();
+  @Output() detailEvent: EventEmitter<number> = new EventEmitter();
+
+  @Input() set gallery(value) {
     if (value) {
-      this._galleries = value;
-      this.loadGallery(this._galleries[this._index]);
+      this.loadGallery(value);
     }
   }
 
-  get galleries() {
-    return this._galleries;
+  get gallery() {
+    return this._gallery;
   }
 
-  set index(value: number) {
-    this._index = value;
-    this.loadGallery(this._galleries[this._index]);
-    this.router.navigate(['galerie/', this._index]);
-  }
+  constructor() { }
 
-  get index() {
-    return this._index;
-  }
-
-  constructor(
-    private activateRoute: ActivatedRoute,
-    private router: Router
-  ) { }
-
-  ngOnInit() {
-    this._index = +this.activateRoute.snapshot.params.id;
-  }
+  ngOnInit() { }
 
   private loadGallery(gallery) {
     gallery.image.map(image => this.loadImage(image));
+    this._gallery = gallery;
   }
 
   private loadImage(image) {
@@ -66,20 +53,15 @@ export class GalleryListComponent implements OnInit {
     tmpImage.src = 'http://mr-g.cz/back/www' + image.thumb;
   }
 
-  decrement() {
-    if (this.index > 0) {
-      this.index--;
-    } else {
-      this.index = this.galleries.length - 1;
-    }
+  detail(index) {
+    this.detailEvent.emit(index);
   }
 
-  increment() {
-    if (this.index < this.galleries.length - 1) {
-      this.index++;
-    } else {
-      this.index = 0;
-    }
+  next() {
+    this.nextEvent.emit();
   }
 
+  prev() {
+    this.prevEvent.emit();
+  }
 }

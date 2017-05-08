@@ -1,1 +1,13 @@
-<app-gallery-list [galleries]="galleries | async"></app-gallery-list>
+<app-gallery-list
+  (prevEvent)="prevGallery()"
+  (nextEvent)="nextGallery()"
+  (detailEvent)="openDetail($event)"
+  [gallery]="getActiveGallery()"></app-gallery-list>
+
+<app-gallery-detail
+  *ngIf="showDetail"
+  (prevEvent)="prevImage()"
+  (nextEvent)="nextImage()"
+  (closeEvent)="closeDetail()"
+  [image]="getActiveImage()"
+></app-gallery-detail>

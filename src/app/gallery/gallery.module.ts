@@ -8,6 +8,7 @@ import { GalleryService } from './services/gallery.service';
 
 import { RootComponent } from './components/root/root.component';
 import { GalleryListComponent } from './components/root/gallery-list/gallery-list.component';
+import { GalleryDetailComponent } from './components/root/gallery-detail/gallery-detail.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { GalleryListComponent } from './components/root/gallery-list/gallery-lis
   declarations: [
     RootComponent,
     GalleryListComponent,
+    GalleryDetailComponent,
   ],
   providers: [
     GalleryService

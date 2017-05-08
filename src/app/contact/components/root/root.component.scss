@@ -3,5 +3,76 @@
 
 :host {
   display: block;
-  padding: rem(90) rem(40) rem(20) rem(40);
+  padding-top: rem(90);
+}
+
+.contact {
+  display: flex;
+  flex-flow: row wrap;
+  padding: rem(20) 0;
+}
+
+.contact__half {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1 100%;
+  justify-content: flex-start;
+
+  @media (min-width: $breakpoint_m) {
+    flex: 1 50%;
+  }
+}
+
+.contact__subtitle {
+  font-size: rem(20);
+  color: map-get($theme, primary-color);
+  text-transform: uppercase;
+  margin: rem(20) 0 rem(10) 0;
+  font-weight: 600;
+}
+
+.contact__line {
+  display: flex;
+}
+
+.contact__line--spacer {
+  margin-top: rem(20);
+}
+
+.contact__day {
+  flex: 1 0 40%;
+}
+
+.contact__time{
+  flex: 1 0 60%;
+}
+
+.contact__contact {
+  font-weight: 600;
+  color: map-get($theme, primary-color);
+  text-decoration: none;
+  transition: color 200ms;
+
+  &:hover {
+    color: map-get($theme, secondary-color);
+  }
+}
+
+.contact__address {
+  font-weight: 600;
+}
+
+.contact__button {
+  color: map-get($theme, secondary-text);
+  margin: 0;
+}
+
+.map {
+  margin: rem(40) 0 0 0;
+  filter: grayscale(100%);
+}
+
+.map__iframe {
+  width: 100%;
+  height: rem(400)
 }

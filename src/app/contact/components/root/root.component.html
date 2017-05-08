@@ -1,3 +1,71 @@
-<p>
-  root works!
-</p>
+<app-headline
+  [name]="headline"
+  [bg]="bg"></app-headline>
+
+<div class="contact container">
+  <div class="contact__half">
+    <h3 class="contact__subtitle">Informace</h3>
+    <div class="contact__line">
+      <a href="tel:+420732932810" class="contact__contact">+420 732 932 810</a>
+    </div>
+    <div class="contact__line">
+      <a href="mailto:info@peperone.cz" class="contact__contact">info@peperone.cz</a>
+    </div>
+    <div class="contact__line contact__line--spacer">
+      <span class="contact__address">Pizzeria & Ristorante Peperone</span>
+    </div>
+    <div class="contact__line">
+      <span class="contact__address">Nádražní 984</span>
+    </div>
+    <div class="contact__line">
+      <span class="contact__address">675 71 Náměšť nad Oslavou</span>
+    </div>
+    <div class="contact__line contact__line--spacer">
+      <span>Ing. Karolína Sobotková</span>
+    </div>
+    <div class="contact__line">
+      <span>IČO: 00714381</span>
+    </div>
+    <div class="contact__line">
+      <span>DIČ: CZ9152274956</span>
+    </div>
+  </div>
+  <div class="contact__half">
+    <h3 class="contact__subtitle">Provozní doba</h3>
+    <div class="contact__line">
+      <span class="contact__day">Po-Čt:</span>
+      <strong class="contact__time">09:00 - 22:00</strong>
+    </div>
+    <div class="contact__line">
+      <span class="contact__day">Pá</span>
+      <strong class="contact__time">09:00 - 23:00</strong>
+    </div>
+    <div class="contact__line">
+      <span class="contact__day">So:</span>
+      <strong class="contact__time">11:00 - 23:00</strong>
+    </div>
+    <div class="contact__line">
+      <span class="contact__day">Ne:</span>
+      <strong class="contact__time">11:00 - 21:00</strong>
+    </div>
+    <div class="contact__line contact__line--spacer">
+      <p>Kuchyně vaří v Po - Pá do 21:30 (poslední objednávka 15 minut předem). V Ne do 20:30 (poslední objednávka 15 minut předem)</p>
+    </div>
+    <div class="contact__line contact__line--spacer">
+      <p>Rozvoz jídel po Náměšti a okolí zdarma po domluvě s obsluhujícím personálem (minimální objednávka - 500,-)</p>
+    </div>
+    <br>
+    <a routerLink="/rezervace" class="contact__button" color="secondary" mcrai-flat-button>Rezervace</a>
+  </div>
+</div>
+
+<div class="map">
+  <iframe
+    class="map__iframe"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2606.6447825667633!2d16.1485081157474!3d49.20729777932321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470d5fd4cf7132fb%3A0x212099dc249bfef2!2zTsOhZHJhxb5uw60gOTg0LCA2NzUgNzEgTsOhbcSbxaHFpSBuYWQgT3NsYXZvdQ!5e0!3m2!1scs!2scz!4v1474811508462"
+    width="600"
+    height="450"
+    frameborder="0"
+    allowfullscreen
+  ></iframe>
+</div>

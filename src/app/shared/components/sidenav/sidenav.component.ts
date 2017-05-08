@@ -9,9 +9,6 @@ const LINKS_PRIMARY: Link[] = [
     url: '/menu-karta',
     name: 'Menu karta'
   }, {
-    url: '/o-nas/o-nas',
-    name: 'O nás'
-  }, {
     url: '/aktuality',
     name: 'Aktuality'
   }, {

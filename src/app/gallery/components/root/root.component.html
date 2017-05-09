@@ -1,13 +1,19 @@
-<app-gallery-list
-  (prevEvent)="prevGallery()"
-  (nextEvent)="nextGallery()"
-  (detailEvent)="openDetail($event)"
-  [gallery]="getActiveGallery()"></app-gallery-list>
+<ng-container *ngIf="!loading &&  galleries.length > 0">
+  <app-gallery-list
+    (prevEvent)="prevGallery()"
+    (nextEvent)="nextGallery()"
+    (detailEvent)="openDetail($event)"
+    [gallery]="getActiveGallery()"></app-gallery-list>
 
-<app-gallery-detail
-  *ngIf="showDetail"
-  (prevEvent)="prevImage()"
-  (nextEvent)="nextImage()"
-  (closeEvent)="closeDetail()"
-  [image]="getActiveImage()"
-></app-gallery-detail>
+  <app-gallery-detail
+    *ngIf="showDetail"
+    (prevEvent)="prevImage()"
+    (nextEvent)="nextImage()"
+    (closeEvent)="closeDetail()"
+    [image]="getActiveImage()"
+  ></app-gallery-detail>
+</ng-container>
+
+<ng-container *ngIf="loading">
+  <app-loader></app-loader>
+</ng-container>

@@ -8,7 +8,19 @@ import { Menu } from '../../../models/menu';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DailyMenuListComponent implements OnInit {
-  @Input() menu: Menu[] = [];
+  _menu: Menu[] = [];
+  loading = true;
+
+  @Input() set menu(value) {
+    if (value) {
+      this._menu = value;
+      this.loading = false;
+    }
+  }
+
+  get menu() {
+    return this._menu;
+  }
 
   constructor() { }
 

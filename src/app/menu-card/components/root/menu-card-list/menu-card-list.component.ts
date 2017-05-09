@@ -7,12 +7,25 @@ import { Menu } from '../../../models/menu';
   styleUrls: ['./menu-card-list.component.scss']
 })
 export class MenuCardListComponent implements OnInit {
-  @Input() items: Menu[] = [];
+  private _items: Menu[] = [];
+
+  loading = true;
+
   @Input() columns: number;
+
+  @Input() set items(value) {
+    if (value) {
+      this._items = value;
+      this.loading = false;
+    }
+  }
+
+  get items() {
+    return this._items;
+  }
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

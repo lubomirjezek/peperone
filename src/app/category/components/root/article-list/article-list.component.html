@@ -1,0 +1,19 @@
+<ng-container *ngIf="!loading && articles.length > 0">
+  <div class="container">
+    <div class="article" *ngFor="let article of articles">
+      <div class="article__text">
+        <h2 class="article__title">
+          <a [routerLink]="article.id" class="article__link">{{ article.header }}</a>
+        </h2>
+        <p class="article__paragraph">{{ article.text }}</p>
+      </div>
+      <a *ngIf="article.img" [routerLink]="article.id" class="article__image">
+        <img [src]="'http://mr-g.cz/back/www' + article.img.thumb" alt="">
+      </a>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="loading">
+  <app-loader></app-loader>
+</ng-container>

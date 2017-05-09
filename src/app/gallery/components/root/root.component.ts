@@ -13,6 +13,7 @@ export class RootComponent implements OnInit {
   galleryIndex = 0;
   imageIndex = 0;
   showDetail = false;
+  loading = true;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -23,7 +24,10 @@ export class RootComponent implements OnInit {
     this.galleryIndex = this.activatedRoute.snapshot.params.id;
     this.galleryService
       .getList()
-      .subscribe(galleries => this.galleries = galleries);
+      .subscribe(galleries => {
+        this.galleries = galleries;
+        this.loading = false;
+      });
   }
 
   getActiveGallery() {

@@ -4,6 +4,7 @@ import { RootComponent } from './components/root/root.component';
 import { CategoryRoutingModule } from './category-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { CategoryService } from './services/category.service';
+import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { CategoryService } from './services/category.service';
     SharedModule
   ],
   declarations: [
-    RootComponent
+    RootComponent,
+    ArticleComponent
   ],
   providers: [
     CategoryService

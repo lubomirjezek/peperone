@@ -17,4 +17,14 @@ export class CategoryService {
       .get(CategoryService.API_URL + 'pages/' + name)
       .map(response => response.json());
   }
+
+  getArticle(category: string, article: string): Observable<Article> {
+    let endpoint = CategoryService.API_URL;
+    endpoint += category + '/';
+    endpoint += article + '/';
+
+    return this.http
+      .get(endpoint)
+      .map(response => response.json());
+  }
 }

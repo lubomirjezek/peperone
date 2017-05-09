@@ -18,6 +18,9 @@ const routes: Routes = [
     path: 'kontakt',
     loadChildren: './contact/contact.module#ContactModule'
   }, {
+    path: 'rezervace',
+    loadChildren: './reservation/reservation.module#ReservationModule'
+  }, {
     path: ':category',
     loadChildren: './category/category.module#CategoryModule'
   }

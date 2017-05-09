@@ -8,7 +8,7 @@ import { Menu } from '../../../models/menu';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DailyMenuListComponent implements OnInit {
-  @Input() list: Menu[] = [];
+  @Input() menu: Menu[] = [];
 
   constructor() { }
 

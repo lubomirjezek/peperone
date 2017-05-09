@@ -1,8 +1,8 @@
-<ng-container *ngIf="data && data.length > 0; then list else empty"></ng-container>
+<ng-container *ngIf="menu && menu.length > 0; then list else empty"></ng-container>
 
 <ng-template #list>
   <ul class="daily-menu">
-    <li class="daily-menu__item" *ngFor="let item of data" [class.daily-menu__item-active]="item.active">
+    <li class="daily-menu__item" *ngFor="let item of menu" [class.daily-menu__item-active]="item.active">
       <h2 class="daily-menu__day">{{ item.day }} ({{ item.date }})</h2>
       <ul class="day">
         <li class="day__item" *ngFor="let soup of item.polifky">

@@ -19,7 +19,7 @@ export class CategoryService {
   }
 
   getArticle(category: string, article: string): Observable<Article> {
-    let endpoint = CategoryService.API_URL;
+    let endpoint = CategoryService.API_URL + 'pages/';
     endpoint += category + '/';
     endpoint += article + '/';
 

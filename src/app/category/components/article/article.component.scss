@@ -5,3 +5,35 @@
   display: block;
   padding-top: rem(90);
 }
+
+.article {
+  margin-bottom: rem(60);
+}
+
+.article__name {
+  font-size: rem(42);
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  padding: rem(60) 0 rem(20) 0;
+}
+
+.article__image {
+  display: flex;
+  margin: rem(20) auto;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: rem(800);
+    height: rem(500);
+    object-fit: contain;
+  }
+
+}
+
+.article__text {
+  padding: rem(20) 0;
+  text-align: center;
+}

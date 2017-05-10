@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { RouterModule } from '@angular/router';
 import { LoaderComponent } from './components/loader/loader.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { LoaderComponent } from './components/loader/loader.component';
     HeaderComponent,
     ContentComponent,
     BurgerComponent,
-    LoaderComponent
+    LoaderComponent,
+    FooterComponent
   ],
   declarations: [
     HeadlineComponent,
@@ -29,6 +31,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     ContentComponent,
     BurgerComponent,
     LoaderComponent,
+    FooterComponent,
   ]
 })
 export class SharedModule { }

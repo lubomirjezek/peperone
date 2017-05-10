@@ -25,6 +25,7 @@ body {
 
 .container {
   margin: 0 rem(10);
+  width: 100%;
 
   @media (min-width: $page-width) {
     margin: 0 auto;

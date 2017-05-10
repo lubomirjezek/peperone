@@ -1,0 +1,40 @@
+@import "../../../../scss/variables";
+@import "../../../../scss/functions";
+
+:host {
+  height: rem(90);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: map-get($theme, footer-color);
+  overflow: hidden;
+
+  @media (min-width: $breakpoint_s) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__rights {
+  font-weight: bold;
+}
+
+.footer__tel {
+  font-weight: bold;
+}
+
+.footer__link {
+  color: map-get($theme, primary-color);
+  text-decoration: none;
+  transition: color 200ms;
+
+  &:hover {
+    color: map-get($theme, secondary-color);
+  }
+}

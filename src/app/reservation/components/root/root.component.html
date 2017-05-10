@@ -1,3 +1,45 @@
-<p>
-  root works!
-</p>
+<app-headline
+  [name]="headline"
+  [bg]="bg"></app-headline>
+
+<div class="reservation">
+  <div class="reservation__row">
+    <mcrai-input-container>
+      <input type="text" placeholder="Jméno a příjmení" mcraiInput>
+    </mcrai-input-container>
+  </div>
+  <div class="reservation__row">
+    <mcrai-input-container>
+      <input type="email" placeholder="E-mail" mcraiInput>
+    </mcrai-input-container>
+  </div>
+  <div class="reservation__row">
+    <mcrai-input-container class="reservation__input">
+      <input type="text" placeholder="Telefonní číslo" mcraiInput>
+    </mcrai-input-container>
+  </div>
+  <div class="reservation__row">
+    <mcrai-input-container class="reservation__input">
+      <input type="date" placeholder="Datum" mcraiInput>
+    </mcrai-input-container>
+    <mcrai-input-container class="reservation__input">
+      <input type="time" placeholder="Od" mcraiInput>
+    </mcrai-input-container>
+    <mcrai-input-container class="reservation__input">
+      <input type="time" placeholder="Do" mcraiInput>
+    </mcrai-input-container>
+  </div>
+  <div class="reservation__row">
+    <mcrai-input-container class="reservation__input">
+      <input type="text" placeholder="Počet lidí" mcraiInput>
+    </mcrai-input-container>
+  </div>
+  <div class="reservation__row">
+    <mcrai-input-container class="reservation__input">
+      <textarea placeholder="Poznámka (volitelné)" mcraiInput></textarea>
+    </mcrai-input-container>
+  </div>
+  <div class="reservation__row">
+    <button class="reservation__button" color="secondary" mcrai-flat-button>Rezervovat</button>
+  </div>
+</div>

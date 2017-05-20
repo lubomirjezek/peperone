@@ -61,6 +61,7 @@
   top: 0;
   bottom: 0;
   margin: auto;
+
 }
 
 .control--prev {
@@ -69,4 +70,10 @@
 
 .control--next {
   right: 3%;
+}
+
+.control__icon {
+  width: rem(45);
+  height: rem(45);
+  font-size: rem(35);
 }

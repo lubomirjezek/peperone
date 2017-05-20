@@ -27,7 +27,7 @@
 }
 
 .tile--card {
-  padding: rem(30);
+  padding: rem(20) rem(30);
   flex-direction: column;
   justify-content: space-between;
 }
@@ -47,5 +47,9 @@
 }
 
 .tile__icon {
-  font-size: rem(40);
+  font-size: rem(65);
+}
+
+.tile__button {
+  color: map-get($theme, primary-text);
 }

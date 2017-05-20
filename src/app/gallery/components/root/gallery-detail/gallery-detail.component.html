@@ -2,14 +2,14 @@
 
 <ng-template #detail>
   <button class="control control--close" (click)="close()" mcrai-icon-button>
-    <mcrai-icon color="secondary">person</mcrai-icon>
+    <mcrai-icon class="control__icon" color="secondary">close</mcrai-icon>
   </button>
   <img class="detail__image" [src]="src" alt="">
   <button class="control control--prev" (click)="prev()" mcrai-icon-button>
-    <mcrai-icon color="secondary">person</mcrai-icon>
+    <mcrai-icon class="control__icon" color="secondary">move_left</mcrai-icon>
   </button>
   <button class="control control--next" (click)="next()" mcrai-icon-button>
-    <mcrai-icon color="secondary">person</mcrai-icon>
+    <mcrai-icon class="control__icon" color="secondary">move_right</mcrai-icon>
   </button>
 </ng-template>
 

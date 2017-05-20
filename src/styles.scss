@@ -33,6 +33,40 @@
 
 @include create-theme($theme);
 
-[mcrai-flat-button] {
+a[mcrai-flat-button],
+button[mcrai-flat-button] {
   letter-spacing: 1px;
+  line-height: 1;
+}
+
+@font-face {
+  font-family: 'icomoon2';
+  src:  url('./assets/fonts/icomoon.eot?w8ixu9');
+  src:  url('./assets/fonts/icomoon.eot?w8ixu9#iefix') format('embedded-opentype'),
+  url('./assets/fonts/icomoon.ttf?w8ixu9') format('truetype'),
+  url('./assets/fonts/icomoon.woff?w8ixu9') format('woff'),
+  url('./assets/fonts/icomoon.svg?w8ixu9#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+mcrai-icon {
+  font-family: 'icomoon2' !important;
+  color: transparent !important;
+
+  &.close:before {
+    content: "\e900";
+  }
+  &.pin:before {
+    content: "\e901";
+  }
+  &.card:before {
+    content: "\e902";
+  }
+  &.move_left:before {
+    content: "\e903";
+  }
+  &.move_right:before {
+    content: "\e904";
+  }
 }

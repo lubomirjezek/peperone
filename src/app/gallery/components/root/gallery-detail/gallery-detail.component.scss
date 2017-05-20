@@ -25,6 +25,8 @@
   top: 0;
   bottom: 0;
   margin: auto;
+  width: rem(65);
+  height: rem(65);
 }
 
 .control--prev {
@@ -40,4 +42,10 @@
   right: 3%;
   left: auto;
   bottom: auto;
+}
+
+.control__icon {
+  width: rem(65);
+  height: rem(65);
+  font-size: rem(55);
 }

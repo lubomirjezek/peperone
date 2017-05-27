@@ -29,7 +29,7 @@
 .tile--card {
   padding: rem(20) rem(30);
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .tile__headline {
@@ -39,11 +39,12 @@
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: rem(2);
-  margin: 0;
+  margin: 0 0 rem(10) 0;
 }
 
 .tile__text {
   text-align: center;
+  margin: 0 0 rem(20) 0;
 }
 
 .tile__icon {

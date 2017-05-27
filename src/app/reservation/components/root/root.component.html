@@ -5,38 +5,112 @@
 <div class="reservation">
   <div class="reservation__row">
     <mcrai-input-container>
-      <input type="text" placeholder="Jméno a příjmení" mcraiInput>
+      <mcrai-input>
+        <input
+          class="reservation__input"
+          mcraiInput
+          type="text"
+          placeholder="Jméno a příjmení"
+          ngModel
+          #name="ngModel"
+          required>
+      </mcrai-input>
+      <mcrai-input-error *ngIf="name.invalid && name.dirty">Zadejte prosím svoje jméno a příjmení</mcrai-input-error>
     </mcrai-input-container>
   </div>
   <div class="reservation__row">
     <mcrai-input-container>
-      <input type="email" placeholder="E-mail" mcraiInput>
+      <mcrai-input>
+        <input
+          class="reservation__input"
+          mcraiInput
+          type="email"
+          placeholder="E-mail"
+          ngModel
+          #email="ngModel"
+          required>
+      </mcrai-input>
+      <mcrai-input-error *ngIf="email.invalid && email.dirty">Zadejte prosím svůj e-mail</mcrai-input-error>
     </mcrai-input-container>
   </div>
   <div class="reservation__row">
-    <mcrai-input-container class="reservation__input">
-      <input type="text" placeholder="Telefonní číslo" mcraiInput>
+    <mcrai-input-container>
+      <mcrai-input>
+        <input
+          class="reservation__input"
+          mcraiInput
+          type="tel"
+          placeholder="Telefonní číslo"
+          ngModel
+          #phone="ngModel"
+          required>
+      </mcrai-input>
+      <mcrai-input-error *ngIf="phone.invalid && phone.dirty">Zadejte prosím svoje telefonní číslo</mcrai-input-error>
     </mcrai-input-container>
   </div>
   <div class="reservation__row">
-    <mcrai-input-container class="reservation__input">
-      <input type="date" placeholder="Datum" mcraiInput>
+    <mcrai-input-container>
+      <mcrai-input>
+        <input
+          class="reservation__input"
+          mcraiInput
+          type="text"
+          placeholder="Datum"
+          ngModel
+          #date="ngModel"
+          required>
+      </mcrai-input>
+      <mcrai-input-error *ngIf="date.invalid && date.dirty">Nezadali jste jméno</mcrai-input-error>
     </mcrai-input-container>
-    <mcrai-input-container class="reservation__input">
-      <input type="time" placeholder="Od" mcraiInput>
+    <mcrai-input-container>
+      <mcrai-input>
+        <input
+          class="reservation__input"
+          mcraiInput
+          type="text"
+          placeholder="Od"
+          ngModel
+          #time_from="ngModel"
+          required>
+      </mcrai-input>
+      <mcrai-input-error *ngIf="time_from.invalid && time_from.dirty">Nezadali jste jméno</mcrai-input-error>
     </mcrai-input-container>
-    <mcrai-input-container class="reservation__input">
-      <input type="time" placeholder="Do" mcraiInput>
+    <mcrai-input-container>
+      <mcrai-input>
+        <input
+          class="reservation__input"
+          mcraiInput type="text" placeholder="Do"
+          ngModel
+          #time_to="ngModel"
+          required>
+      </mcrai-input>
+      <mcrai-input-error *ngIf="time_to.invalid && time_to.dirty">Nezadali jste jméno</mcrai-input-error>
     </mcrai-input-container>
   </div>
   <div class="reservation__row">
-    <mcrai-input-container class="reservation__input">
-      <input type="text" placeholder="Počet lidí" mcraiInput>
+    <mcrai-input-container>
+      <mcrai-input>
+        <input
+          class="reservation__input"
+          mcraiInput type="text" placeholder="Počet lidí"
+          ngModel
+          #count="ngModel"
+          required>
+      </mcrai-input>
+      <mcrai-input-error *ngIf="count.invalid && count.dirty">Nezadali jste jméno</mcrai-input-error>
     </mcrai-input-container>
   </div>
   <div class="reservation__row">
-    <mcrai-input-container class="reservation__input">
-      <textarea placeholder="Poznámka (volitelné)" mcraiInput></textarea>
+    <mcrai-input-container>
+      <mcrai-input>
+        <textarea
+          class="reservation__input"
+          mcraiInput
+          type="text"
+          placeholder="Poznámka (volitelné)"
+          ngModel
+          #note="ngModel"></textarea>
+      </mcrai-input>
     </mcrai-input-container>
   </div>
   <div class="reservation__row">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
 import { ActivatedRoute } from '@angular/router';
 import { Article } from '../../models/article';
@@ -6,7 +6,8 @@ import { Article } from '../../models/article';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.scss']
+  styleUrls: ['./article.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ArticleComponent implements OnInit {
   article: Article;

@@ -3,10 +3,10 @@
 
 :host {
   display: block;
-  padding-top: rem(90);
 }
 
 .article {
+  padding-top: rem(90);
   margin-bottom: rem(60);
 }
 
@@ -36,4 +36,16 @@
 .article__text {
   padding: rem(20) 0;
   text-align: center;
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: map-get($theme, primary-color);
+
+    &:hover {
+      color: map-get($theme, secondary-color);
+    }
+  }
 }
+
+

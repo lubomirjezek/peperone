@@ -17,12 +17,14 @@ export class ArticleComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const category = this.activatedRoute.snapshot.params.category;
-    const name  = this.activatedRoute.snapshot.params.article;
+    this.activatedRoute.params.subscribe(params => {
+      const category = params.category;
+      const name     = params.article;
 
-    this.categoryService
-      .getArticle(category, name)
-      .subscribe(article => this.article = article);
+      this.categoryService
+        .getArticle(category, name)
+        .subscribe(article => this.article = article);
+    });
   }
 
 }

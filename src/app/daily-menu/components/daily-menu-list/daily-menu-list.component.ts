@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { Menu } from '../../../models/menu';
+import { Menu } from '../../models/menu';
 
 @Component({
   selector: 'app-daily-menu-list',

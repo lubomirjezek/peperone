@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DailyMenuService } from '../../service/daily-menu.service';
+import { DailyMenuService } from '../../services/daily-menu.service';
 import { Observable } from 'rxjs/Observable';
 import { Menu } from '../../models/menu';
 

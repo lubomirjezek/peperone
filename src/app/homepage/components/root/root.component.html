@@ -15,7 +15,12 @@
     <img class="tile__image" src="assets/img/home3.jpg" alt="">
   </app-tile>
 
-  <app-tile class="tile tile--empty"></app-tile>
+  <app-tile class="tile tile--card" color="primary">
+    <mcrai-icon class="tile__icon" color="secondary">video</mcrai-icon>
+    <h2 class="tile__headline">Videoprezentace</h2>
+    <p class="tile__text">Mrkněte na naše nově nově natočené video</p>
+    <button class="tile__button" color="alternative" (click)="videoModal.open()" mcrai-flat-button>Více zde!</button>
+  </app-tile>
   <app-tile class="tile">
     <img class="tile__image" src="assets/img/home4.jpg" alt="">
   </app-tile>
@@ -26,6 +31,12 @@
     <a class="tile__button" routerLink="/menu-karta" color="alternative" mcrai-flat-button>Více zde!</a>
   </app-tile>
 </app-tiles>
+
+<mcrai-modal class="video" size="normal" position="outside" #videoModal>
+  <mcrai-modal-content class="video__content">
+    <iframe class="video__iframe" src="https://www.youtube.com/embed/O5teKyiCd2Q"></iframe>
+  </mcrai-modal-content>
+</mcrai-modal>
 
 <app-map></app-map>
 

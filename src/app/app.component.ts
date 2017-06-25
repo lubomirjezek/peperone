@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { MessageService } from './shared/services/message.service';
 
 @Component({
   selector: 'body',
@@ -14,11 +15,16 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   ]
 })
 export class AppComponent implements OnInit {
+  @ViewChild('messageAnchor', { read: ViewContainerRef }) messageAnchor: ViewContainerRef;
   state = false;
 
-  constructor () { }
+  constructor (
+    private messageService: MessageService
+  ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.messageService.anchor = this.messageAnchor;
+  }
 
   handleStateChange(state: boolean) {
     this.state = state;

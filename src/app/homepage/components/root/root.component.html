@@ -19,7 +19,7 @@
     <mcrai-icon class="tile__icon" color="secondary">video</mcrai-icon>
     <h2 class="tile__headline">Videoprezentace</h2>
     <p class="tile__text">Mrkněte na naše nově nově natočené video</p>
-    <button class="tile__button" color="alternative" (click)="videoModal.open()" mcrai-flat-button>Více zde!</button>
+    <button class="tile__button" color="alternative" (click)="toggleModal()" mcrai-flat-button>Více zde!</button>
   </app-tile>
   <app-tile class="tile">
     <img class="tile__image" src="assets/img/home4.jpg" alt="">
@@ -32,7 +32,7 @@
   </app-tile>
 </app-tiles>
 
-<mcrai-modal class="video" size="normal" position="outside" #videoModal>
+<mcrai-modal class="video" sizeX="3" sizeY="2" position="outside" (closeEvent)="toggleModal()" *ngIf="showModal">
   <mcrai-modal-content class="video__content">
     <iframe class="video__iframe" src="https://www.youtube.com/embed/O5teKyiCd2Q"></iframe>
   </mcrai-modal-content>

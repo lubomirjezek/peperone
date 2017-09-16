@@ -6,10 +6,6 @@
   padding-top: rem(90);
 }
 
-.mcrai-input-element {
- background: 0;
-}
-
 .reservation {
   max-width: rem(550);
   margin: rem(30) auto;
@@ -24,7 +20,7 @@
   justify-content: space-between;
 }
 
-mcrai-input-container {
+.reservation__input {
   flex: 1;
   margin: 0 rem(10);
 }

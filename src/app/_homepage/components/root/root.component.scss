@@ -53,6 +53,7 @@
 
 .tile__button {
   color: map-get($theme, primary-text);
+  flex: 0 0 auto;
 }
 
 .video { }

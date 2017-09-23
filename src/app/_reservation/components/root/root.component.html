@@ -2,7 +2,7 @@
   [name]="headline"
   [bg]="bg"></app-headline>
 
-<form class="reservation" (submit)="sendReservation($event, reservation.value)" [formGroup]="reservation">
+<div class="reservation">
   <div class="reservation__row">
     <mcrai-input
       class="reservation__input"
@@ -74,6 +74,7 @@
     <button
       class="reservation__button"
       color="secondary"
+      (click)="sendReservation($event, reservation.value)"
       [disabled]="reservation.invalid" mcrai-flat-button>Rezervovat</button>
   </div>
-</form>
+</div>

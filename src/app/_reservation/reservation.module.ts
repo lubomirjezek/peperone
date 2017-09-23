@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { McRAIButtonModule, McRAIInputModule } from '@mcrai/ui';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReservationService } from './services/reservation.service';
+import { MessageModule } from '../message/message.module';
 
 @NgModule({
   imports: [
@@ -14,9 +15,12 @@ import { ReservationService } from './services/reservation.service';
     ReactiveFormsModule,
     ReservationRoutingModule,
     McRAIButtonModule,
-    McRAIInputModule
+    McRAIInputModule,
+    MessageModule
   ],
-  declarations: [RootComponent],
+  declarations: [
+    RootComponent
+  ],
   providers: [
     ReservationService
   ]

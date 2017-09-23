@@ -2,9 +2,9 @@ import { Injectable, ViewContainerRef, ComponentRef, ComponentFactoryResolver } 
 import { MessageComponent } from '../components/message/message.component';
 import { Observable } from 'rxjs/Observable';
 
-import 'rxjs/add/observable/timer';
+import { Type } from '../models/type';
 
-export enum Type { Info, Success, Error, Warning }
+import 'rxjs/add/observable/timer';
 
 @Injectable()
 export class MessageService {
@@ -21,13 +21,12 @@ export class MessageService {
     if (this.canShow) {
       this.canShow = false;
       const messageComponent = this.resolver.resolveComponentFactory(MessageComponent);
-      console.log(this.anchor);
       this.componentRef = this.anchor.createComponent(messageComponent);
       this.componentRef.changeDetectorRef.detectChanges();
     }
   }
 
-  private fill(text: string, type: number) {
+  private fill(text: string, type: Type) {
     this.componentRef.instance.text = text;
     this.componentRef.instance.type = type;
   }
@@ -39,7 +38,7 @@ export class MessageService {
     });
   }
 
-  show(text: string, type: number, time?: number): void {
+  show(text: string, type: Type, time?: number): void {
     const duration = time || 3000;
     this.create();
     this.fill(text, type);

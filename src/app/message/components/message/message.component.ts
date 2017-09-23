@@ -1,6 +1,6 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
-import { Type } from '../../services/message.service';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { Type } from '../../models/type';
 
 @Component({
   selector: 'app-message',

@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { SharedModule } from './shared/shared.module';
+import { MessageModule } from './message/message.module';
 
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AppComponent } from './app.component';
     HttpModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule.forRoot()
+    MessageModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [

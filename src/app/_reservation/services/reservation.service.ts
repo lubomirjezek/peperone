@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { RequestOptions, Headers, Http, Response } from '@angular/http';
-import { MessageService, Type } from '../../shared/services/message.service';
+import { MessageService } from '../../message/services/message.service';
+import { Type } from '../../message/models/type';
 
 @Injectable()
 export class ReservationService {

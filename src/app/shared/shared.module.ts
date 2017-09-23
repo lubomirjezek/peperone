@@ -9,9 +9,6 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { RouterModule } from '@angular/router';
 import { LoaderComponent } from './components/loader/loader.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MessageComponent } from './components/message/message.component';
-import { MessageService } from './services/message.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -26,7 +23,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BurgerComponent,
     LoaderComponent,
     FooterComponent,
-    MessageComponent
   ],
   declarations: [
     HeadlineComponent,
@@ -36,19 +32,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BurgerComponent,
     LoaderComponent,
     FooterComponent,
-    MessageComponent,
-  ],
-  entryComponents: [
-    MessageComponent
   ]
 })
-export class SharedModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: SharedModule,
-      providers: [
-        MessageService
-      ]
-    };
-  }
-}
+export class SharedModule { }

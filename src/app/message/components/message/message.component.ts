@@ -1,6 +1,7 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Type } from '../../models/type';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-message',
@@ -20,30 +21,22 @@ import { Type } from '../../models/type';
   ]
 })
 export class MessageComponent implements OnInit {
-  @Input() text: string;
-  @Input('class') @HostBinding('class') classList: string;
-  @HostBinding('@fadeInOut') doAnimate = true;
+  readonly MESSAGE_TYPES = Type;
 
-  @Input() set type(value: number) {
-    switch (value) {
-      default:
-      case Type.Info:
-        this.classList += ' info';
-        break;
-      case Type.Success:
-        this.classList += ' success';
-        break;
-      case Type.Error:
-        this.classList += ' error';
-        break;
-      case Type.Warning:
-        this.classList += ' warning';
-        break;
-    }
+  type: number;
+  text: string;
+  show: boolean;
+
+  constructor(
+    private messageService: MessageService
+  ) { }
+
+  ngOnInit() {
+    this.messageService.data.subscribe(data => {
+      this.show = data.show;
+      this.text = data.text;
+      this.type = data.type;
+    });
   }
-
-  constructor() { }
-
-  ngOnInit() { }
 
 }

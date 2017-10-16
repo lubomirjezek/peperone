@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { MessageService } from './message/services/message.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
@@ -21,11 +21,9 @@ import 'rxjs/add/operator/mergeMap';
   ]
 })
 export class AppComponent implements OnInit {
-  @ViewChild('messageAnchor', { read: ViewContainerRef }) messageAnchor: ViewContainerRef;
   state = false;
 
   constructor (
-    private messageService: MessageService,
     private title: Title,
     private meta: Meta,
     private activatedRoute: ActivatedRoute,
@@ -33,8 +31,6 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.messageService.anchor = this.messageAnchor;
-
     this.router.events
       .filter(event => event instanceof NavigationEnd)
       .map(() => this.activatedRoute)

@@ -16,7 +16,6 @@ import { MessageModule } from '../message/message.module';
     ReservationRoutingModule,
     McRAIButtonModule,
     McRAIInputModule,
-    MessageModule
   ],
   declarations: [
     RootComponent

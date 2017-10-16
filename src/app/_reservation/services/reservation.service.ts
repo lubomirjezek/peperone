@@ -3,6 +3,8 @@ import { RequestOptions, Headers, Http, Response } from '@angular/http';
 import { MessageService } from '../../message/services/message.service';
 import { Type } from '../../message/models/type';
 
+import 'rxjs/add/observable/of';
+
 @Injectable()
 export class ReservationService {
 
@@ -24,6 +26,7 @@ export class ReservationService {
 
   private success() {
     const text = 'Děkujeme za Vaši rezervaci. Vyčkejte, prosím, až bude Vaše rezervace potvrzena zpět na uvedený email, do té doby není platná. Budeme se těšit na Vaši návštěvu!';
+
 
     this.messageService
       .show(text, Type.Success, 10000);

@@ -1,1 +1,7 @@
-<span class="message__text">{{ text }}</span>
+<div
+  *ngIf="show"
+  [@fadeInOut]
+  [class]="'message ' + (type | enumToString: MESSAGE_TYPES)"
+>
+  <span class="message__text">{{ text }}</span>
+</div>

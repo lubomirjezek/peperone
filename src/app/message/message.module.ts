@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { MessageService } from './services/message.service';
 
 import { MessageComponent } from './components/message/message.component';
+import { EnumToStringPipe } from './pipes/enum-to-string.pipe';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    MessageComponent
+    MessageComponent,
+    EnumToStringPipe
   ],
   exports: [
     MessageComponent

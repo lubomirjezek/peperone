@@ -37,7 +37,7 @@
 }
 
 .footer__supporting {
-  margin-right: rem(20);
+  margin-right: rem(10);
 }
 
 .footer__rights {
@@ -56,4 +56,10 @@
   &:hover {
     color: map-get($theme, secondary-color);
   }
+}
+
+.footer__img {
+  width: rem(120);
+  height: rem(70);
+  object-fit: contain;
 }

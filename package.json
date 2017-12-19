@@ -24,6 +24,7 @@
     "@mcrai/ui": "git+ssh://git@bitbucket.org/Guddrog/ui.git",
     "core-js": "^2.5.1",
     "rxjs": "^5.4.3",
+    "web-animations-js": "^2.3.1",
     "zone.js": "^0.8.17"
   },
   "devDependencies": {

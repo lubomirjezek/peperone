@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { UIModule } from '@mcrai/ui/index';
+
 import { SharedModule } from '../shared/shared.module';
 import { MenuCardRoutingModule } from './menu-card-routing.module';
-
 import { RootComponent } from './components/root/root.component';
 import { MenuCardService } from './services/menu-card.service';
 import { MenuCardListComponent } from './components/root/menu-card-list/menu-card-list.component';
@@ -11,7 +12,8 @@ import { MenuCardListComponent } from './components/root/menu-card-list/menu-car
   imports: [
     CommonModule,
     SharedModule,
-    MenuCardRoutingModule
+    MenuCardRoutingModule,
+    UIModule
   ],
   declarations: [
     RootComponent,

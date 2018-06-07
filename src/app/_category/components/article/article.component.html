@@ -1,15 +1,17 @@
-<ng-container *ngIf="article; then display else loading"></ng-container>
+<ng-container *ngIf="(article$ | async); then display else loading"></ng-container>
 
 <ng-template #display>
   <div class="article container">
-    <h1 class="article__name">{{ article.header }}</h1>
+    <h1 class="article__name">{{ (article$ | async)?.header }}</h1>
 
-    <div *ngIf="article.img" class="article__image">
-      <img [src]="'http://mr-g.cz/back/www' + article.img.normal" [alt]="article.header">
+    <div *ngIf="(article$ | async)?.img" class="article__image">
+      <img [src]="'http://mr-g.cz/back/www' + (article$ | async)?.img.normal" [alt]="(article$ | async)?.header">
     </div>
 
-    <div class="article__text" [innerHTML]="article.text"></div>
-    <a *ngIf="article.return" color="primary"  [routerLink]="'/' + article.category" mcrai-flat-button>zpět</a>
+    <div class="article__text" [innerHTML]="(article$ | async)?.text"></div>
+    <a *ngIf="(article$ | async)?.return" [routerLink]="'/' + (article$ | async)?.category" mcrai-button="primary">
+      zpět
+    </a>
   </div>
 </ng-template>
 

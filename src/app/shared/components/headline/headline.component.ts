@@ -6,8 +6,9 @@ import { Component, HostBinding, Input, OnInit } from '@angular/core';
   styleUrls: ['./headline.component.scss']
 })
 export class HeadlineComponent implements OnInit {
-  @Input() name: string;
-  @Input() @HostBinding('style.background-image') bg: string;
+
+  @Input() public name: string;
+  @Input() @HostBinding('style.background-image') public bg: string;
 
   constructor() { }
 

@@ -1,12 +1,14 @@
+
+import {mergeMap, map, filter} from 'rxjs/operators';
 import { AfterViewInit, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { MessageService } from './message/services/message.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
+
+
+
 
 @Component({
   selector: 'body',
@@ -31,18 +33,18 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.router.events
-      .filter(event => event instanceof NavigationEnd)
-      .map(() => this.activatedRoute)
-      .map(route => {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map(() => this.activatedRoute),
+      map(route => {
         while (route.firstChild) {
           route = route.firstChild;
         }
 
         return route;
-      })
-      .filter(route => route.outlet === 'primary')
-      .mergeMap(route => route.data)
+      }),
+      filter(route => route.outlet === 'primary'),
+      mergeMap(route => route.data),)
       .subscribe(data => {
         this.title.setTitle(data['title']);
 

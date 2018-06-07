@@ -1,4 +1,8 @@
-<ng-container *ngIf="!loading && menu.length > 0">
+<ng-container *ngIf="loading">
+  <app-loader></app-loader>
+</ng-container>
+
+<ng-container *ngIf="!loading && menu?.length > 0">
   <ul class="daily-menu">
     <li class="daily-menu__item" *ngFor="let item of menu" [class.daily-menu__item-active]="item.active">
       <h2 class="daily-menu__day">{{ item.day }} ({{ item.date }})</h2>
@@ -20,12 +24,8 @@
   <br><br><br>
 </ng-container>
 
-<ng-container *ngIf="!loading &&  menu.length == 0">
+<ng-container *ngIf="!loading &&  menu?.length == 0">
   <br><br>
   <p>Denní menu je právě teď prázdné.</p>
   <br><br>
-</ng-container>
-
-<ng-container *ngIf="loading">
-  <app-loader></app-loader>
 </ng-container>

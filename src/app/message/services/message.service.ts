@@ -1,10 +1,10 @@
+
+import {timer as observableTimer,  Observable ,  BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { Type } from '../models/type';
 
-import 'rxjs/add/observable/timer';
+
 
 @Injectable()
 export class MessageService {
@@ -21,7 +21,7 @@ export class MessageService {
   }
 
   private destroy(duration) {
-    Observable.timer(duration).subscribe(() => {
+    observableTimer(duration).subscribe(() => {
       this.data.next({ show: false });
     });
   }

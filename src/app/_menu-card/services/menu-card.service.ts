@@ -1,20 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+
 import { Menu } from '../models/menu';
-import 'rxjs/add/operator/map';
+import { BaseService } from '../../base.service';
 
-@Injectable()
-export class MenuCardService {
-  private static API_URL = 'http://mr-g.cz/back/www/api/';
+@Injectable({
+  providedIn: 'root'
+})
+export class MenuCardService extends BaseService {
 
-  constructor(
-    private http: Http
-  ) { }
+  public getMenu(id: number): Observable<Menu[]> {
+    const endpoint = this.buildUrl(['menukarta', id]);
 
-  getMenu(id: number): Observable<Menu[]> {
-    return this.http
-      .get(MenuCardService.API_URL + 'menukarta/' + id)
-      .map(response => response.json());
+    return this.get(endpoint);
   }
 }

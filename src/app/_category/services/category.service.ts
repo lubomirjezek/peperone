@@ -1,30 +1,24 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+
 import { Article } from '../models/article';
-import 'rxjs/add/operator/map';
+import { BaseService } from '../../base.service';
 
-@Injectable()
-export class CategoryService {
-  private static API_URL = 'http://mr-g.cz/back/www/api/';
+@Injectable({
+  providedIn: 'root'
+})
+export class CategoryService extends BaseService {
 
-  constructor(
-    private http: Http
-  ) { }
+  public getArticles(name: string): Observable<Article[]> {
+    const endpoint = this.buildUrl(['pages', name]);
 
-  getArticles(name: string): Observable<Article[]> {
-    return this.http
-      .get(CategoryService.API_URL + 'pages/' + name)
-      .map(response => response.json());
+    return this.get(endpoint);
   }
 
-  getArticle(category: string, article: string): Observable<Article> {
-    let endpoint = CategoryService.API_URL + 'pages/';
-    endpoint += category + '/';
-    endpoint += article + '/';
+  public getArticle(category: string, article: string): Observable<Article> {
+    const endpoint = this.buildUrl(['pages', category, article]);
 
-    return this.http
-      .get(endpoint)
-      .map(response => response.json());
+    return this.get(endpoint);
   }
+
 }

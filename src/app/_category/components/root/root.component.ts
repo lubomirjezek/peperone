@@ -1,25 +1,41 @@
-import { Component, OnInit } from '@angular/core';
-import { Article } from '../../models/article';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
+import { Article } from '../../models/article';
 import { CategoryService } from '../../services/category.service';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-category',
   templateUrl: './root.component.html',
   styleUrls: ['./root.component.scss']
 })
-export class RootComponent implements OnInit {
-  articles: Observable<Article[]>;
+export class RootComponent implements OnInit, OnDestroy {
+  private _destroy: Subject<null> = new Subject<null>();
+
+  private _articles$: Observable<Article[]>;
+  get articles$(): Observable<Article[]> {
+    return this._articles$;
+  }
 
   constructor(
-    private activatedRoute: ActivatedRoute,
-    private categoryService: CategoryService
+    private _activatedRoute: ActivatedRoute,
+    private _categoryService: CategoryService
   ) { }
 
   ngOnInit() {
-    const name = this.activatedRoute.snapshot.params.category;
-    this.articles = this.categoryService.getArticles(name);
+    this._activatedRoute.params
+      .pipe(
+        takeUntil(this._destroy)
+      )
+      .subscribe((params: { [key: string]: string }) => {
+        this._articles$ = this._categoryService.getArticles(params.name);
+      });
+  }
+
+  ngOnDestroy() {
+    this._destroy.next();
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DailyMenuService } from '../../services/daily-menu.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Menu } from '../../models/menu';
 
 @Component({
@@ -9,16 +9,27 @@ import { Menu } from '../../models/menu';
   styleUrls: ['./root.component.scss']
 })
 export class RootComponent implements OnInit {
-  headline = 'Denní menu';
-  bg = 'url(../../../assets/img/bg-daily-menu.jpg)';
-  menuList: Observable<Menu[]>;
+  private _headline = 'Denní menu';
+  get headline(): string {
+    return this._headline;
+  }
+
+  private _bg = 'url(../../../assets/img/bg-daily-menu.jpg)';
+  get bg(): string {
+    return this._bg;
+  }
+
+  private _menuList$: Observable<Menu[]>;
+  get menuList$(): Observable<Menu[]> {
+    return this._menuList$;
+  }
 
   constructor(
-    private dailyMenuService: DailyMenuService
+    private _dailyMenuService: DailyMenuService
   ) { }
 
   ngOnInit() {
-    this.menuList = this.dailyMenuService.getList();
+    this._menuList$ = this._dailyMenuService.getList();
   }
 
 }

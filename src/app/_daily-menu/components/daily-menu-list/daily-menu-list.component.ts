@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+
 import { Menu } from '../../models/menu';
 
 @Component({
@@ -7,23 +8,23 @@ import { Menu } from '../../models/menu';
   styleUrls: ['./daily-menu-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DailyMenuListComponent implements OnInit {
-  _menu: Menu[] = [];
-  loading = true;
+export class DailyMenuListComponent implements OnInit, OnChanges {
 
-  @Input() set menu(value) {
-    if (value) {
-      this._menu = value;
-      this.loading = false;
-    }
-  }
+  @Input() public menu: Menu[];
 
-  get menu() {
-    return this._menu;
+  private _loading = true;
+  get loading(): boolean {
+    return this._loading;
   }
 
   constructor() { }
 
   ngOnInit() { }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.hasOwnProperty('menu')) {
+      this._loading = false;
+    }
+  }
 
 }

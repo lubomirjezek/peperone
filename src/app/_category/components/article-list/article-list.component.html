@@ -1,4 +1,4 @@
-<ng-container *ngIf="!loading && articles.length > 0">
+<ng-container *ngIf="!loading && articles?.length > 0">
   <div class="container">
     <div class="article" *ngFor="let article of articles">
       <div class="article__text">
@@ -8,7 +8,7 @@
         <p class="article__paragraph">{{ article.text }}</p>
       </div>
       <a *ngIf="article.img" [routerLink]="article.id" class="article__image">
-        <img [src]="'http://mr-g.cz/back/www' + article.img.thumb" alt="">
+        <img [src]="apiUrl + article.img.thumb" alt="">
       </a>
     </div>
   </div>

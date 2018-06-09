@@ -1,30 +1,13 @@
 import { Injectable } from '@angular/core';
-import { RequestOptions, Headers, Http, Response } from '@angular/http';
 import { MessageService } from '../../message/services/message.service';
 import { Type } from '../../message/models/type';
-
-import 'rxjs/add/observable/of';
+import { BaseService } from '../../base.service';
+import { Reservation } from '../models/reservation';
 
 @Injectable()
-export class ReservationService {
+export class ReservationService extends BaseService {
 
-  private apiUrl = 'http://mr-g.cz/back/www/api/';
-
-  constructor(
-    private http: Http,
-    private messageService: MessageService
-  ) { }
-
-  private getOptions() {
-    const headers = new Headers({ 'Content-Type': 'application/json' });
-    return new RequestOptions({ headers: headers });
-  }
-
-  private handleResponse(res: Response) {
-    return res.json();
-  }
-
-  private success() {
+/*  private success() {
     const text = 'Děkujeme za Vaši rezervaci. Vyčkejte, prosím, až bude Vaše rezervace potvrzena zpět na uvedený email, do té doby není platná. Budeme se těšit na Vaši návštěvu!';
 
 
@@ -37,23 +20,13 @@ export class ReservationService {
 
     this.messageService
       .show(text, Type.Error, 5000);
-  }
+  }*/
 
-  send(data) {
-    // fuck nette in the ass
-    const params  = '?count=' + data.count
-      + '&date=' + data.date
-      + '&email=' + data.email
-      + '&name=' + data.name
-      + '&tel=' + data.tel
-      + '&time_from=' + data.time_from
-      + '&time_to=' + data.time_to
-      + '&note=' + data.note;
+  public send(params: Reservation): void {
+    const endpoint = this.buildUrl(['rezervace'], params);
 
-    this.http
-      .get(this.apiUrl + 'rezervace' + params)
-      .map(this.handleResponse)
-      .subscribe(this.success.bind(this), this.error.bind(this));
+    this.get(endpoint)
+      // .subscribe(this.success.bind(this), this.error.bind(this));
   }
 
 }

@@ -1,4 +1,8 @@
-<ng-container *ngIf="!loading && items.length > 0 && columns === 2">
+<ng-container *ngIf="loading">
+  <app-loader></app-loader>
+</ng-container>
+
+<ng-container *ngIf="!loading && items?.length > 0 && columns === 2">
   <ul class="list list--col-2">
     <li class="list__item" *ngFor="let item of items">
       <div class="list__cell">{{ item.name }}</div>
@@ -7,7 +11,7 @@
   </ul>
 </ng-container>
 
-<ng-container *ngIf="!loading && items.length > 0 && columns === 3">
+<ng-container *ngIf="!loading && items?.length > 0 && columns === 3">
   <ul class="list list--col-3">
     <li class="list__item" *ngFor="let item of items">
       <div class="list__cell">
@@ -20,7 +24,7 @@
   </ul>
 </ng-container>
 
-<ng-container *ngIf="!loading && items.length > 0 && columns === 4">
+<ng-container *ngIf="!loading && items?.length > 0 && columns === 4">
   <ul class="list list--col-4">
     <li class="list__item">
       <div class="list__cell"></div>
@@ -40,8 +44,4 @@
       <div class="list__cell">{{ item.price }},-</div>
     </li>
   </ul>
-</ng-container>
-
-<ng-container *ngIf="loading">
-  <app-loader></app-loader>
 </ng-container>

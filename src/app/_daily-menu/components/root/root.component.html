@@ -1,9 +1,7 @@
-<app-headline
-  [name]="headline"
-  [bg]="bg"></app-headline>
+<app-headline [name]="headline" [bg]="bg"></app-headline>
 
 <div class="container">
-  <app-daily-menu-list [menu]="menuList | async"></app-daily-menu-list>
+  <app-daily-menu-list [menu]="menuList$ | async"></app-daily-menu-list>
 </div>
 
 <app-footer></app-footer>

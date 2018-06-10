@@ -73,24 +73,6 @@
 }
 
 .control__icon {
-  width: rem(45);
-  height: rem(45);
-  font-size: rem(35);
+  font-size: rem(30) !important;
 }
 
-
-mcrai-icon {
-  position: relative;
-
-  &:before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}

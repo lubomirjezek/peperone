@@ -66,6 +66,7 @@
   margin: auto;
   font-size: rem(50);
   width: rem(50);
+  color: map-get($theme, color-primary);
 }
 
 .map__iframe {

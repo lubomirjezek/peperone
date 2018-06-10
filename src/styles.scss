@@ -48,46 +48,8 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 0 30px !important;
-  color: #fff;
 }
 
 .mcrai-toast__text {
   color: map-get($theme, text-secondary);
 }
-
-/*
-a[mcrai-flat-button],
-button[mcrai-flat-button] {
-  letter-spacing: 1px;
-  line-height: 1;
-}
-
-.modal {
-  padding: 0 !important;
-}
-
-.modal__header {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.modal__content {
-  display: flex !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.modal__footer {
-  display: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.mcrai-input-text__focused {
-  color: map-get($theme, primary-text) !important;
-}
-
-.outside .modal__btn-close {
-  top: 0 !important;
-  right: -45px !important;
-}*/

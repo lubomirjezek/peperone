@@ -17,7 +17,7 @@
 
 .headline__name {
   font-size: rem(48);
-  color: map-get($theme, secondary-text);
+  color: map-get($theme, text-secondary);
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: rem(2);

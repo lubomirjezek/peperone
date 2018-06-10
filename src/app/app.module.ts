@@ -5,9 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { MessageModule } from './message/message.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 export const API_URL = 'http://mr-g.cz/back/www/api/';
 
@@ -21,8 +21,8 @@ export const API_URL = 'http://mr-g.cz/back/www/api/';
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MessageModule,
-    SharedModule
+    SharedModule,
+    OverlayModule
   ],
   providers: [
     { provide: 'API_URL', useValue: API_URL }

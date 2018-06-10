@@ -39,14 +39,14 @@
   top: rem(70);
   text-transform: uppercase;
   font-size: rem(40);
-  color: map-get($theme, primary-color);
+  color: map-get($theme, color-primary);
 }
 
 .map__line--email {
   top: rem(120);
   text-transform: uppercase;
   font-size: rem(40);
-  color: map-get($theme, secondary-color);
+  color: map-get($theme, color-secondary);
 }
 
 .map__line--address-1 {

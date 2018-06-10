@@ -16,27 +16,21 @@
   </app-tile>
 
   <app-tile class="tile tile--card" color="primary">
-    <!--<mcrai-icon class="tile__icon" color="secondary">video</mcrai-icon>-->
+    <mcrai-icon class="tile__icon" color="secondary">video</mcrai-icon>
     <h2 class="tile__headline">Videoprezentace</h2>
     <p class="tile__text">Mrkněte na naše nově natočené video</p>
-    <button class="tile__button" color="alternative" (click)="toggleModal()" mcrai-flat-button>Více zde!</button>
+    <button class="tile__button" (click)="openVideoModal()" mcrai-button="neutral">Více zde!</button>
   </app-tile>
   <app-tile class="tile">
     <img class="tile__image" src="assets/img/home4.jpg" alt="">
   </app-tile>
   <app-tile class="tile tile--card" color="secondary">
-    <!--<mcrai-icon class="tile__icon" color="call">card</mcrai-icon>-->
+    <mcrai-icon class="tile__icon" color="alternative">card</mcrai-icon>
     <h2 class="tile__headline">Nový jídelní lístek</h2>
     <p class="tile__text">Připravili jsme pro Vás nový jídelní lístek!</p>
-    <a class="tile__button" routerLink="/menu-karta" color="alternative" mcrai-flat-button>Více zde!</a>
+    <a class="tile__button" routerLink="/menu-karta" mcrai-button="neutral">Více zde!</a>
   </app-tile>
 </app-tiles>
-
-<!--<mcrai-modal class="video" sizeX="3" sizeY="2" position="outside" (closeEvent)="toggleModal()" *ngIf="showModal">
-  <mcrai-modal-content class="video__content">
-    <iframe class="video__iframe" src="https://www.youtube.com/embed/O5teKyiCd2Q"></iframe>
-  </mcrai-modal-content>
-</mcrai-modal>-->
 
 <app-map></app-map>
 

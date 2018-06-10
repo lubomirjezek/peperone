@@ -1,14 +1,8 @@
-
-import {mergeMap, map, filter} from 'rxjs/operators';
-import { AfterViewInit, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { mergeMap, map, filter } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { MessageService } from './message/services/message.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
-
-
-
-
 
 @Component({
   selector: 'body',

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { MessageService } from '../../message/services/message.service';
-import { Type } from '../../message/models/type';
+
 import { BaseService } from '../../base.service';
 import { Reservation } from '../models/reservation';
+import { Observable, of } from 'rxjs';
 
 @Injectable()
 export class ReservationService extends BaseService {
@@ -22,11 +22,11 @@ export class ReservationService extends BaseService {
       .show(text, Type.Error, 5000);
   }*/
 
-  public send(params: Reservation): void {
-    const endpoint = this.buildUrl(['rezervace'], params);
+  public send(params: Reservation): Observable<any> {
+    // const endpoint = this.buildUrl(['rezervace'], params);
 
-    this.get(endpoint)
-      // .subscribe(this.success.bind(this), this.error.bind(this));
+    // return this.get(endpoint);
+    return of(null);
   }
 
 }

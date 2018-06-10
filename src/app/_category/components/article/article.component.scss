@@ -1,13 +1,9 @@
 @import "../../../../scss/variables";
 @import "../../../../scss/functions";
 
-:host {
-  display: block;
-}
-
 .article {
-  padding-top: rem(90);
   margin-bottom: rem(60);
+  padding-top: rem(90);
 }
 
 .article__name {
@@ -40,10 +36,10 @@
   a {
     text-decoration: none;
     font-weight: bold;
-    color: map-get($theme, primary-color);
+    color: map-get($theme, color-primary);
 
     &:hover {
-      color: map-get($theme, secondary-color);
+      color: map-get($theme, color-secondary);
     }
   }
 }

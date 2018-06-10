@@ -39,7 +39,7 @@
 
 .article__link {
   font-weight: 600;
-  color: map-get($theme, primary-text);
+  color: map-get($theme, text-primary);
   font-size: rem(40);
   margin: 0;
   text-transform: uppercase;
@@ -47,7 +47,7 @@
   text-decoration: none;
 
   &:hover {
-    color: map-get($theme, primary-color);
+    color: map-get($theme, color-primary);
   }
 }
 

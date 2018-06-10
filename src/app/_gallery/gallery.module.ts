@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { McRAIButtonModule, McRAIIconModule } from 'ui';
 
 import { GalleryRoutingModule } from './gallery-routing.module';
 import { SharedModule } from '../shared/shared.module';
@@ -12,6 +13,8 @@ import { GalleryDetailComponent } from './components/gallery-detail/gallery-deta
     CommonModule,
     GalleryRoutingModule,
     SharedModule,
+    McRAIIconModule,
+    McRAIButtonModule
   ],
   declarations: [
     RootComponent,

@@ -1,7 +1,7 @@
 <app-headline
   [name]="headline"
   [bg]="bg"></app-headline>
-<!--
+
 
 <div class="reservation">
   <div class="reservation__row">
@@ -9,8 +9,8 @@
       class="reservation__input"
       [control]="reservation.controls.name"
       placeholder="Jméno a příjmení"
-      error="Vaše jméno a příjmení"
-      text
+      errors="Vaše jméno a příjmení"
+      type="text"
     ></mcrai-input>
   </div>
   <div class="reservation__row">
@@ -18,8 +18,8 @@
       class="reservation__input"
       [control]="reservation.controls.email"
       placeholder="E-mail"
-      error="Vaše e-mailová adresa"
-      text
+      errors="Vaše e-mailová adresa"
+      type="text"
     ></mcrai-input>
   </div>
   <div class="reservation__row">
@@ -27,8 +27,8 @@
       class="reservation__input"
       [control]="reservation.controls.tel"
       placeholder="Telefonní číslo"
-      error="Vaše telefonní číslo"
-      text
+      errors="Vaše telefonní číslo"
+      type="text"
     ></mcrai-input>
   </div>
   <div class="reservation__row">
@@ -36,22 +36,22 @@
       class="reservation__input"
       [control]="reservation.controls.date"
       placeholder="Datum"
-      error="Datum rezervace"
-      text
+      errors="Datum rezervace"
+      type="text"
     ></mcrai-input>
     <mcrai-input
       class="reservation__input"
       [control]="reservation.controls.time_from"
       placeholder="Od"
-      error="Čas konce rezervace"
-      text
+      errors="Čas začátku rezervace"
+      type="text"
     ></mcrai-input>
     <mcrai-input
       class="reservation__input"
       [control]="reservation.controls.time_to"
       placeholder="Do"
-      error="Datum začátku rezervace"
-      text
+      errors="Datum konce rezervace"
+      type="text"
     ></mcrai-input>
   </div>
   <div class="reservation__row">
@@ -59,8 +59,8 @@
       class="reservation__input"
       [control]="reservation.controls.count"
       placeholder="Počet lidí"
-      error="Počet lidí pro které je rezervace určena"
-      text
+      errors="Počet lidí pro které je rezervace určena"
+      type="text"
     ></mcrai-input>
   </div>
   <div class="reservation__row">
@@ -68,15 +68,13 @@
       class="reservation__input"
       [control]="reservation.controls.note"
       placeholder="Poznámka (volitelné)"
-      text
+      type="text"
     ></mcrai-input>
   </div>
   <div class="reservation__row">
     <button
       class="reservation__button"
-      color="secondary"
-      (click)="sendReservation($event, reservation.value)"
-      [disabled]="reservation.invalid" mcrai-flat-button>Rezervovat</button>
+      (click)="sendReservation()"
+      [disabled]="reservation.invalid" mcrai-button="positive">Rezervovat</button>
   </div>
 </div>
--->

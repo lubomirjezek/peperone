@@ -23,14 +23,14 @@
   }
 
   &.primary {
-    background-color: map-get($theme, primary-color);
+    background-color: map-get($theme, color-primary);
   }
 
   &.secondary {
-    background-color: map-get($theme, secondary-color);
+    background-color: map-get($theme, color-secondary);
   }
 
   &.alternative {
-    background-color: map-get($theme, alternative-color);
+    background-color: map-get($theme, panel-primary);
   }
 }

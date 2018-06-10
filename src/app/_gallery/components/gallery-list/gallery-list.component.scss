@@ -35,7 +35,7 @@
 }
 
 .list__info {
-  background-color: map-get($theme, secondary-color);
+  background-color: map-get($theme, color-secondary);
   // padding: rem(40) rem(60);
   position: relative;
 }
@@ -43,7 +43,7 @@
 .list__title {
   text-transform: uppercase;
   margin: rem(10) 0;
-  color: map-get($theme, secondary-text);
+  color: map-get($theme, text-secondary);
   font-size: rem(30);
   font-weight: 400;
 }

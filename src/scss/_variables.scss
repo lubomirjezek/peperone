@@ -11,6 +11,40 @@ $breakpoint-xl:     1280px;
 $breakpoint-xxl:    1366px;
 
 $theme: (
+  font-primary: ('Karben', sans-serif),
+
+  font-weight-light:  300,
+  font-weight-normal: 400,
+  font-weight-bold:   500,
+
+  text-primary:     rgb(0, 0, 0),
+  text-secondary:   rgb(255, 255, 255),
+  text-alternative: rgb(194, 3, 8),
+
+  color-primary:   rgb(194, 3, 8),
+  color-secondary: rgb(0, 150, 64),
+
+  button-positive: rgb(0, 150, 64),
+  button-negative: rgb(194, 3, 8),
+  button-neutral:  rgb(255, 255, 255),
+
+  toast-success: rgb(11, 204, 116),
+  toast-error:   rgb(201, 25, 18),
+  toast-info:    rgb(59, 132, 217),
+
+  panel-primary:   rgb(255, 255, 255),
+  panel-secondary: rgb(226, 226, 226),
+
+  line-primary:     rgb(194, 3, 8),
+  line-secondary:   rgb(255, 255, 255),
+  line-alternative: rgb(255, 255, 255),
+
+  background-primary: rgb(255, 255, 255)
+);
+
+
+/*
+$theme: (
   primary-text:      rgb(0, 0, 0),
   secondary-text:    rgb(255, 255, 255),
   alternative-text:  rgb(0, 0, 0),
@@ -53,3 +87,4 @@ $icon-font: (
   icon-font-name:    'icomoon',
   icon-font-version: 'w8ixu9',
 );
+*/

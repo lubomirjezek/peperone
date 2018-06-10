@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { McRAIButtonModule } from 'ui';
 
 import { RootComponent } from './components/root/root.component';
 import { ContactRoutingModule } from './contact-routing.module';
@@ -9,7 +10,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     ContactRoutingModule,
-    SharedModule
+    SharedModule,
+    McRAIButtonModule
   ],
   declarations: [
     RootComponent

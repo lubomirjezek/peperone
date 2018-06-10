@@ -1,15 +1,7 @@
-<app-header
-  (changeState)="handleStateChange($event)"
-  [@open]="state"
-  [state]="state"></app-header>
+<app-header (changeState)="handleStateChange($event)" [@open]="state" [state]="state"></app-header>
 
-<app-content
-  [@open]="state">
+<app-content [@open]="state">
   <router-outlet></router-outlet>
 </app-content>
 
-<app-sidenav
-  (changeState)="handleStateChange($event)"
-  [@open]="state"></app-sidenav>
-
-<app-message></app-message>
+<app-sidenav (changeState)="handleStateChange($event)" [@open]="state"></app-sidenav>

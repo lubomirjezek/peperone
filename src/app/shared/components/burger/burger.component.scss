@@ -26,7 +26,7 @@
   width: 100%;
   opacity: 1;
   left: 0;
-  background-color: map-get($theme, primary-color);
+  background-color: map-get($theme, color-primary);
   transition: .25s ease;
 }
 
@@ -43,7 +43,7 @@
 .burger__line--2,
 .burger__line--3 {
   top: rem(15);
-  background-color: map-get($theme, secondary-color);
+  background-color: map-get($theme, color-secondary);
 
 }
 

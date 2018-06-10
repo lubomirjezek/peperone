@@ -30,11 +30,14 @@
 
 .reservation__input {
   flex: 1;
-  margin: 0 rem(10);
 }
 
 .reservation__button {
-  margin: rem(40) rem(10) 0 rem(10);
+  margin-top: rem(40);
   flex: 1 1 100%;
   color: #fff;
+}
+
+.reservation__disclaimer {
+  margin: rem(20) 0;
 }

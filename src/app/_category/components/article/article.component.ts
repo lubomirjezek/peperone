@@ -1,6 +1,9 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { CategoryService } from '../../services/category.service';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
+import { CategoryService } from '../../services/category.service';
 import { Article } from '../../models/article';
 
 @Component({
@@ -9,23 +12,31 @@ import { Article } from '../../models/article';
   styleUrls: ['./article.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ArticleComponent implements OnInit {
-  article: Article;
+export class ArticleComponent implements OnInit, OnDestroy {
+  private _destroy: Subject<null> = new Subject<null>();
+
+  private _article$: Observable<Article>;
+  get article$(): Observable<Article> {
+    return this._article$;
+  }
 
   constructor(
-    private activatedRoute: ActivatedRoute,
-    private categoryService: CategoryService
+    private _activatedRoute: ActivatedRoute,
+    private _categoryService: CategoryService
   ) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
-      const category = params.category;
-      const name     = params.article;
+    this._activatedRoute.params
+      .pipe(
+        takeUntil(this._destroy)
+      )
+      .subscribe((params: { [key: string]: string }) => {
+        this._article$ = this._categoryService.getArticle(params.category, params.article);
+      });
+  }
 
-      this.categoryService
-        .getArticle(category, name)
-        .subscribe(article => this.article = article);
-    });
+  ngOnDestroy() {
+    this._destroy.next();
   }
 
 }

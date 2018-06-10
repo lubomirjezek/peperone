@@ -3,7 +3,7 @@
 
 :host {
   display: flex;
-  background-color: map-get($theme, footer-color);
+  background-color: map-get($theme, panel-secondary);
   overflow: hidden;
 }
 
@@ -49,12 +49,12 @@
 }
 
 .footer__link {
-  color: map-get($theme, primary-color);
+  color: map-get($theme, color-primary);
   text-decoration: none;
   transition: color 200ms;
 
   &:hover {
-    color: map-get($theme, secondary-color);
+    color: map-get($theme, color-secondary);
   }
 }
 

@@ -1,20 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Http } from '@angular/http';
+import { Observable } from 'rxjs';
+
 import { Gallery } from '../models/gallery';
-import 'rxjs/add/operator/map';
+import { BaseService } from '../../base.service';
 
-@Injectable()
-export class GalleryService {
-  private static API_URL = 'http://mr-g.cz/back/www/api/';
+@Injectable({
+  providedIn: 'root'
+})
+export class GalleryService extends BaseService {
 
-  constructor(
-    private http: Http
-  ) { }
+  public getList(): Observable<Gallery[]> {
+    const endpoint = this.buildUrl(['gallery']);
 
-  getList(): Observable<Gallery[]> {
-    return this.http
-      .get(GalleryService.API_URL + 'gallery')
-      .map(response => response.json());
+    return this.get(endpoint);
   }
 }

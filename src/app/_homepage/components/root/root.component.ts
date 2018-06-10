@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { McRAIModal, McRAIModalOptions } from 'ui';
+
+import { VideoModalComponent } from '../video-modal/video-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -6,14 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./root.component.scss']
 })
 export class RootComponent implements OnInit {
-  showModal = false;
 
-  constructor() { }
+  constructor(
+    private _modalService: McRAIModal
+  ) { }
 
   ngOnInit() { }
 
-  toggleModal() {
-    this.showModal = !this.showModal;
+  openVideoModal() {
+    this._modalService.open(VideoModalComponent, new McRAIModalOptions('800px', '525px'));
   }
 
 }

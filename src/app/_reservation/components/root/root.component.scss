@@ -13,6 +13,14 @@
   flex-flow: row wrap;
 }
 
+:host /deep/ .mcrai-input__placeholder {
+  color: map-get($theme, text-primary);
+}
+
+:host /deep/ .mcrai-input__underline--wrapper {
+  background-color: map-get($theme, color-primary);
+}
+
 .reservation__row {
   flex: 1 1 100%;
   display: flex;
@@ -22,10 +30,14 @@
 
 .reservation__input {
   flex: 1;
-  margin: 0 rem(10);
 }
 
 .reservation__button {
   margin-top: rem(40);
   flex: 1 1 100%;
+  color: #fff;
+}
+
+.reservation__disclaimer {
+  margin: rem(20) 0;
 }

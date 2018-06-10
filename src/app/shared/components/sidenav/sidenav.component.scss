@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: map-get($theme, navigation-color);
+  background-color: map-get($theme, color-secondary);
   padding: rem(20) 0;
   position: fixed;
   top: 0;
@@ -32,14 +32,14 @@
 .nav-list__link {
   text-transform: uppercase;
   text-decoration: none;
-  color: map-get($theme, secondary-text);
+  color: map-get($theme, text-secondary);
   transition: color 200ms;
   padding: rem(5) 0;
   font-size: rem(22);
   font-weight: 400;
 
   &:hover, &.nav-list__link--active {
-    color: map-get($theme, primary-text);
+    color: map-get($theme, text-primary);
   }
 }
 
@@ -50,7 +50,7 @@
   .nav-list__item {
     &:first-child:after {
       content: '/';
-      color: map-get($theme, secondary-text);
+      color: map-get($theme, text-secondary);
       line-height: rem(20);
       vertical-align: middle;
       font-size: rem(14);

@@ -7,9 +7,9 @@
 }
 
 .daily-menu__day {
-  color: map-get($theme, primary-color);
+  color: map-get($theme, color-primary);
   text-transform: uppercase;
-  border-bottom: 1px solid map-get($theme, secondary-color);
+  border-bottom: 1px solid map-get($theme, color-secondary);
   padding-bottom: rem(10);
   font-size: rem(20);
   font-weight: 600;

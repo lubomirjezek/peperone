@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
-import { MessageModule } from './message/message.module';
+import { HttpClientModule } from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { OverlayModule } from '@angular/cdk/overlay';
+
+export const API_URL = 'http://mr-g.cz/back/www/api/';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MessageModule,
-    SharedModule
+    SharedModule,
+    OverlayModule
   ],
-  providers: [],
+  providers: [
+    { provide: 'API_URL', useValue: API_URL }
+  ],
   bootstrap: [
     AppComponent
   ]

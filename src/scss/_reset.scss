@@ -1,14 +1,10 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-html, body {
-  // height: 100%;
-}
+html, body { }
 
 html {
   font-size: #{$base-font-size}px;
@@ -19,8 +15,8 @@ body {
   line-height: 1.5;
   font-family: $base-font-family;
   font-weight: 300;
-  background-color: map-get($theme, page-color);
-  color: map-get($theme, primary-text);
+  background-color: map-get($theme, background-primary);
+  color: map-get($theme, text-primary);
 }
 
 .container {
@@ -33,15 +29,3 @@ body {
   }
 }
 
-/*a,
-a:link,
-a:visited {
-  font-weight: 600;
-  text-decoration: none;
-  color: map-get($theme, primary-color);;
-
-  &:hover {
-    color: map-get($theme, secondary-color);;
-  }
-}
-*/

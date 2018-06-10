@@ -1,20 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+
 import { Menu } from '../models/menu';
-import 'rxjs/add/operator/map';
+import { BaseService } from '../../base.service';
 
-@Injectable()
-export class DailyMenuService {
-  private static API_URL = 'http://mr-g.cz/back/www/api/';
+@Injectable({
+  providedIn: 'root'
+})
+export class DailyMenuService extends BaseService {
 
-  constructor(
-    private http: Http
-  ) { }
+  public getList(): Observable<Menu[]> {
+    const endpoint = this.buildUrl(['dennimenu']);
 
-  getList(): Observable<Menu[]> {
-    return this.http
-               .get(DailyMenuService.API_URL + 'dennimenu')
-               .map(response => response.json());
+    return this.get(endpoint);
   }
+
 }

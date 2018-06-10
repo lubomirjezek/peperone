@@ -1,0 +1,72 @@
+@import "../../../../scss/variables";
+@import "../../../../scss/functions";
+
+:host {
+  display: block;
+}
+
+.article {
+  display: flex;
+  padding: rem(40) 0;
+}
+
+.article__text {
+  flex: 1 1 50%;
+
+  @media (min-width: $breakpoint_m) {
+    padding: 0 rem(60) 0 0;
+  }
+}
+
+.article__image {
+  display: none;
+
+  @media (min-width: $breakpoint_m) {
+    display: block;
+    flex: 1 1 50%;
+  }
+
+  img {
+    width: rem(500);
+    height: rem(300);
+    object-fit: cover;
+  }
+}
+
+.article__title {
+  margin: rem(20) 0;
+}
+
+.article__link {
+  font-weight: 600;
+  color: map-get($theme, text-primary);
+  font-size: rem(40);
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1;
+  text-decoration: none;
+
+  &:hover {
+    color: map-get($theme, color-primary);
+  }
+}
+
+.article__paragraph {
+  display: block;
+  max-height: rem(120);
+  overflow: hidden;
+}
+
+.article:nth-child(even) {
+  .article__img {
+    order: 1;
+  }
+
+  .article__text {
+    order: 2;
+
+    @media (min-width: $breakpoint_m) {
+      padding: 0 0 0 rem(60);
+    }
+  }
+}

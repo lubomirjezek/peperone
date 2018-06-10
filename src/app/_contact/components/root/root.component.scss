@@ -25,7 +25,7 @@
 
 .contact__subtitle {
   font-size: rem(20);
-  color: map-get($theme, primary-color);
+  color: map-get($theme, color-primary);
   text-transform: uppercase;
   margin: rem(20) 0 rem(10) 0;
   font-weight: 600;
@@ -49,12 +49,12 @@
 
 .contact__contact {
   font-weight: 600;
-  color: map-get($theme, primary-color);
+  color: map-get($theme, color-primary);
   text-decoration: none;
   transition: color 200ms;
 
   &:hover {
-    color: map-get($theme, secondary-color);
+    color: map-get($theme, color-secondary);
   }
 }
 
@@ -63,7 +63,7 @@
 }
 
 .contact__button {
-  color: map-get($theme, secondary-text);
+  color: map-get($theme, text-secondary);
   margin: 0;
 }
 

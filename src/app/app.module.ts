@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { OverlayModule } from '@angular/cdk/overlay';
 
-export const API_URL = 'http://mr-g.cz/back/www/api/';
+export const API_URL = 'http://peperone.cz/back/www/api/';
 
 @NgModule({
   declarations: [

@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { OverlayModule } from '@angular/cdk/overlay';
 
 export const API_URL = 'http://peperone.cz/back/www/api/';
+export const ASSETS_URL = 'http://peperone.cz/back/www';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ export const API_URL = 'http://peperone.cz/back/www/api/';
     OverlayModule
   ],
   providers: [
-    { provide: 'API_URL', useValue: API_URL }
+    { provide: 'API_URL', useValue: API_URL },
+    { provide: 'ASSETS_URL', useValue: ASSETS_URL }
   ],
   bootstrap: [
     AppComponent

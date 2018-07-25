@@ -1,5 +1,6 @@
-import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Inject, Input, OnInit, Output } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { API_URL } from '../../../app.module';
 
 @Component({
   selector: 'app-gallery-detail',
@@ -38,7 +39,9 @@ export class GalleryDetailComponent implements OnInit {
     return this._image;
   }
 
-  constructor() { }
+  constructor(
+    @Inject('ASSETS_URL') private _assetsUrl: string
+  ) { }
 
   ngOnInit() { }
 
@@ -46,12 +49,12 @@ export class GalleryDetailComponent implements OnInit {
     this.src = '/assets/img/rolling.svg';
 
     const loaded = () => {
-      this.src = 'http://mr-g.cz/back/www' + image.normal;
+      this.src = this._assetsUrl + image.normal;
     };
 
     const tmpImage = new Image();
     tmpImage.onload = loaded;
-    tmpImage.src = 'http://mr-g.cz/back/www' + image.normal;
+    tmpImage.src = this._assetsUrl + image.normal;
   }
 
   next() {

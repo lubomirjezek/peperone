@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { Gallery } from '../../models/gallery';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { API_URL } from '../../../app.module';
 
 @Component({
   selector: 'app-gallery-list',
@@ -32,7 +33,9 @@ export class GalleryListComponent implements OnInit {
     return this._gallery;
   }
 
-  constructor() { }
+  constructor(
+    @Inject('ASSETS_URL') private _assetsUrl: string
+  ) { }
 
   ngOnInit() { }
 
@@ -45,12 +48,12 @@ export class GalleryListComponent implements OnInit {
     image = Object.assign(image, { displaySrc: '/assets/img/rolling.svg' });
 
     const loaded = () => {
-      image.displaySrc = 'http://mr-g.cz/back/www' + image.thumb;
+      image.displaySrc = this._assetsUrl + image.thumb;
     };
 
     const tmpImage = new Image();
     tmpImage.onload = loaded;
-    tmpImage.src = 'http://mr-g.cz/back/www' + image.thumb;
+    tmpImage.src = this._assetsUrl + image.thumb;
   }
 
   detail(index) {

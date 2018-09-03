@@ -30,7 +30,7 @@ export class RootComponent implements OnInit, OnDestroy {
         takeUntil(this._destroy)
       )
       .subscribe((params: { [key: string]: string }) => {
-        this._articles$ = this._categoryService.getArticles(params.name);
+        this._articles$ = this._categoryService.getArticles(params.category);
       });
   }
 

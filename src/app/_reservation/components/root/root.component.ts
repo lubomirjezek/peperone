@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { take } from 'rxjs/operators';
 
-import { Reservation } from '../../models/reservation';
 import { ReservationService } from '../../services/reservation.service';
-import { McRAIToaster, ToastType } from 'ui';
+import { McRAIModal, McRAIModalOptions, McRAIToaster, ToastType } from 'ui';
+import { ReservationSuccessModalComponent } from '../reservation-success-modal/reservation-success-modal.component';
 
 @Component({
   selector: 'app-reservation',
@@ -28,21 +28,20 @@ export class RootComponent implements OnInit {
 
   constructor(
     private reservationService: ReservationService,
-    private _toasterService: McRAIToaster
+    private toasterService: McRAIToaster,
+    private modalService: McRAIModal
   ) { }
 
   ngOnInit() { }
 
   private _success() {
-    const text = 'Děkujeme za Vaši rezervaci. Vyčkejte, prosím, až bude Vaše rezervace potvrzena zpět na uvedený email, do té doby není platná. Budeme se těšit na Vaši návštěvu!';
-
-    this._toasterService.makeToast(text, ToastType.Success, 10000);
+    this.modalService.open(ReservationSuccessModalComponent, new McRAIModalOptions('600px', '200px'));
   }
 
   private _error() {
     const text = 'Rezervaci se nepodařilo vytvořit. Zkuste prosím později, nebo zavolejte na telefonní čislo +420 732 932 810';
 
-    this._toasterService.makeToast(text, ToastType.Error, 5000);
+    this.toasterService.makeToast(text, ToastType.Error, 5000);
   }
 
   public sendReservation(): void {

@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { McRAIButtonModule, McRAIInputModule, McRAIToasterModule } from 'ui';
+import { McRAIButtonModule, McRAIInputModule, McRAIModalModule, McRAIToasterModule } from 'ui';
 
 import { RootComponent } from './components/root/root.component';
 import { ReservationRoutingModule } from './reservation-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReservationService } from './services/reservation.service';
+import { ReservationSuccessModalComponent } from './components/reservation-success-modal/reservation-success-modal.component';
 
 @NgModule({
   imports: [
@@ -16,10 +17,15 @@ import { ReservationService } from './services/reservation.service';
     ReservationRoutingModule,
     McRAIInputModule,
     McRAIButtonModule,
-    McRAIToasterModule
+    McRAIToasterModule,
+    McRAIModalModule
   ],
   declarations: [
-    RootComponent
+    RootComponent,
+    ReservationSuccessModalComponent
+  ],
+  entryComponents: [
+    ReservationSuccessModalComponent
   ],
   providers: [
     ReservationService

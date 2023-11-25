@@ -7,3 +7,8 @@ services:
     ports:
       - '4200:4200'
     command: bash -c "npm i && ng s --host 0.0.0.0 --port 4200"
+  build:
+    build: .
+    volumes: 
+      - .:/usr/src/app
+    command: bash -c "npm i && ng build --prod --aot"

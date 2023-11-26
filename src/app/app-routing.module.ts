@@ -37,13 +37,13 @@ const routes: Routes = [
       title: 'Pizzeria a restaurace peperone - Náměšť nad Oslavou',
       description: 'Typické italské rodinné prostředí s příjemnou atmosférou, milý personál, rychlý servis, čerstvé pokrmy – to vše jsou hodnoty.'
     }
-  // }, {
-  //   path: 'rezervace',
-  //   loadChildren: './_reservation/reservation.module#ReservationModule',
-  //   data: {
-  //     title: 'Pizzeria a restaurace peperone - Náměšť nad Oslavou',
-  //     description: 'Typické italské rodinné prostředí s příjemnou atmosférou, milý personál, rychlý servis, čerstvé pokrmy – to vše jsou hodnoty.'
-  //   }
+  }, {
+    path: 'rezervace',
+    loadChildren: './_reservation/reservation.module#ReservationModule',
+    data: {
+      title: 'Pizzeria a restaurace peperone - Náměšť nad Oslavou',
+      description: 'Typické italské rodinné prostředí s příjemnou atmosférou, milý personál, rychlý servis, čerstvé pokrmy – to vše jsou hodnoty.'
+    }
   }, {
     path: 'rozvoz',
     loadChildren: './_delivery/delivery.module#DeliveryModule',

@@ -23,9 +23,9 @@ const LINKS_PRIMARY: Link[] = [
   }, {
     url: '/kontakt',
     name: 'Kontakt'
-  }, {
-    url: '/rezervace',
-    name: 'Rezervace'
+  // }, {
+  //   url: '/rezervace',
+  //   name: 'Rezervace'
   }
 ];
 
